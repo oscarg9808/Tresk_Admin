@@ -2,6 +2,7 @@ package ec.edu.ups.tresk.controlador;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import ec.edu.ups.tesk.datos.CategoriaDAO;
@@ -9,6 +10,7 @@ import ec.edu.ups.tesk.modelo.Categorias;
 import ec.edu.ups.tesk.modelo.Productos;
 
 @ManagedBean
+@SessionScoped
 public class CategoriaControlador {
 
 		private Categorias cate;
@@ -31,7 +33,10 @@ public class CategoriaControlador {
 			this.cate = cate;
 		}
 
-
+		public String addProductos() {
+			cate.addProducto(new Productos());
+			return null;
+		}
 
 		public String guardar() {
 			System.out.println(cate);

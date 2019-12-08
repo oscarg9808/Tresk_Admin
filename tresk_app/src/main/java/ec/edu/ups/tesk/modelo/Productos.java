@@ -8,11 +8,12 @@ public class Productos {
 
 		@Id 
 		private int id;
-		
-		
+
 		private String nombre;
 		private String descripcion;
 		private double precio_uni;
+		
+		
 		public int getId() {
 			return id;
 		}
