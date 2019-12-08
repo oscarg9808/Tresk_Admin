@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body>
+<h1> Nuevo Cliente</h1>
+<h:form>
+	<h:panelGrid column="3">
+		<h:outputLabel value="Nombre" for= "nombre" />
+		<h:inputText value="#{clienteControlador.cliente.nombre}" id="nombre" />
+		<h:message for="nombre"/>
+	
+		<h:outputLabel value="Apellido" for= "apellido" />
+		<h:inputText value="#{clienteControlador.cliente.apellido}" id="apellido" />
+		<h:message for="apellido"/>
+	
+		<h:outputLabel value="Telefono" for= "telefono" />
+		<h:inputText value="#{clienteControlador.cliente.telefono}" id="telefono" />
+		<h:message for="telefono"/>
+	
+		<h:outputLabel value="Correo" for= "correo" />
+		<h:inputText value="#{clienteControlador.cliente.correo}" id="correo" />
+		<h:message for="correo"/>
+	
+		<h:outputLabel value="Usuario" for= "usuario" />
+		<h:inputText value="#{clienteControlador.cliente.usuario}" id="usuario" />
+		<h:message for="usuario"/>
+
+		<h:outputLabel value="Contraseña" for= "contra" />
+		<h:inputText value="#{clienteControlador.cliente.contrasena}" id="contra" />
+		<h:message for="contra"/>
+		
+		<h:commandButton action="#{clienteControlador.guardar()}" value="Guardar" />
+	
+	</h:panelGrid>
+		
+</h:form>
+</body> 
+</html>
