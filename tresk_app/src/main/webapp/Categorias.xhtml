@@ -16,7 +16,21 @@
 		<h:message for="nombre"/>
 		
 		<h:commandButton action="#{categoriaControlador.guardar()}" value="Guardar" />
+				
 	</h:panelGrid>
+	
+	<h:dataTable value="#{categoriaControlador.cate.productos}" var="Productos">
+		<h:column>
+			<f:facet name="header"> Codigo</f:facet>
+			<h:inputText value="#{Productos.id}" />
+			<f:facet name="header"> Nombre</f:facet>
+			<h:inputText value="#{Productos.nombre}" />
+			<f:facet name="header"> Descripcion</f:facet>
+			<h:inputText value="#{Productos.descripcion}" />
+			<f:facet name="header">Precio Unitario</f:facet>
+			<h:inputText value="#{Productos.precio_uni}" />
+		</h:column>
+	</h:dataTable>
 </h:form>
 </body> 
 </html>

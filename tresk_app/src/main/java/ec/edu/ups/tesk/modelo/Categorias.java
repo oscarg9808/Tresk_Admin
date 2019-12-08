@@ -1,5 +1,6 @@
 package ec.edu.ups.tesk.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -38,6 +39,14 @@ public class Categorias {
 		}
 		public void setProductos(List<Productos> productos) {
 			this.productos = productos;
+		}
+		
+		public void addProducto(Productos pro) {
+			if(productos == null) {
+				productos = new ArrayList<>();
+			productos.add(pro);
+
+			}
 		}
 		
 		@Override

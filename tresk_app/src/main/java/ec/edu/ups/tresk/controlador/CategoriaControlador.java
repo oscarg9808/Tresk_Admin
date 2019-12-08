@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import ec.edu.ups.tesk.datos.CategoriaDAO;
 import ec.edu.ups.tesk.modelo.Categorias;
+import ec.edu.ups.tesk.modelo.Productos;
 
 @ManagedBean
 public class CategoriaControlador {
@@ -18,6 +19,8 @@ public class CategoriaControlador {
 		@PostConstruct
 		private void init() {
 			cate = new Categorias();
+			cate.addProducto(new Productos());
+			
 		}
 
 		public Categorias getCate() {
