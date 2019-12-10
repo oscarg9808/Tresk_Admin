@@ -15,6 +15,7 @@ import ec.edu.ups.tesk.modelo.Productos;
 public class CategoriaControlador {
 
 		private Categorias cate;
+		public int pro;
 		
 		@Inject 
 		private CategoriaDAO catdao;
@@ -45,4 +46,21 @@ public class CategoriaControlador {
 			catdao.insertar(cate);
 			return null;
 		}	
+		
+		public String Buscar() {
+			System.out.println(catdao.leer(pro));
+			catdao.leer(pro);
+			return null;
+		}
+
+		public int getPro() {
+			return pro;
+		}
+
+		public void setPro(int pro) {
+			this.pro = pro;
+		}
+		
+		
+		
 }

@@ -24,14 +24,14 @@ public class CategoriaDAO {
 	}
 	
 	 
-	public void borrar(String id) {
+	public void borrar(int id) {
 		em.remove(leer(id));
 	}
 	
 	
-	public Categorias leer(String id) {
-		em.find(Categorias.class, id);
-		return null;
+	public Categorias leer(int id) {
+		return em.find(Categorias.class, id);
+		
 	}
 
 	

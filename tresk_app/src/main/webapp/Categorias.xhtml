@@ -24,7 +24,8 @@
 	</h:panelGrid>
 	
 	<h:commandButton action="#{categoriaControlador.addProductos()}" value="+ Productos"  immediate="true"/>
-	<h:commandButton value="Buscar"/>
+	<h:commandButton action="#{categoriaControlador.Buscar()}" value="Buscar"/>
+	<h:inputText value="#{categoriaControlador.pro}" id="ot" />
 		
 	<h:dataTable value="#{categoriaControlador.cate.productos}" var="Productos">
 		<h:column>
