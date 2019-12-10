@@ -30,9 +30,9 @@ public class Categorias {
 		}
 		public String getNombre() {
 			return nombre;
-		}
+		} 
 		public void setNombre(String nombre) {
-			this.nombre = nombre;
+			this.nombre = nombre; 
 		}
 		
 		public List<Productos> getProductos() {
@@ -45,9 +45,8 @@ public class Categorias {
 		public void addProducto(Productos pro) {
 			if(productos == null) {
 				productos = new ArrayList<>();
-			productos.add(pro);
-
 			}
+			productos.add(pro);
 		}
 		
 		@Override

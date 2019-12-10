@@ -3,6 +3,7 @@ package ec.edu.ups.tresk.controlador;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ec.edu.ups.tesk.datos.CategoriaDAO;
@@ -10,7 +11,7 @@ import ec.edu.ups.tesk.modelo.Categorias;
 import ec.edu.ups.tesk.modelo.Productos;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class CategoriaControlador {
 
 		private Categorias cate;
@@ -34,6 +35,7 @@ public class CategoriaControlador {
 		}
 
 		public String addProductos() {
+			System.out.println("add prod");
 			cate.addProducto(new Productos());
 			return null;
 		}
@@ -42,6 +44,5 @@ public class CategoriaControlador {
 			System.out.println(cate);
 			catdao.insertar(cate);
 			return null;
-		}
-		
+		}	
 }
