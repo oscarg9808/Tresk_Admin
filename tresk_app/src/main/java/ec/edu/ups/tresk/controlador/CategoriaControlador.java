@@ -73,6 +73,10 @@ public class CategoriaControlador {
 		public void eliminar(int codigo) {
 			catdao.borrar(codigo);			
 		}
-
+		
+		public String update() {
+			catdao.actualizar(cate);;
+			return null;
+		}
 		
 }

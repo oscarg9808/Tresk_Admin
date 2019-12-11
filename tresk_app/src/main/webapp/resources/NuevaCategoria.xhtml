@@ -14,7 +14,7 @@
     <meta name="keywords" content="au theme template"></meta>
 
     <!-- Title Page-->
-    <title>Register</title>
+    <title>Nueva Categoria</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all"></link>
@@ -54,37 +54,19 @@
 					                  		 <form action="" method="post">
 					                            <h:form>
 					                            	<h:panelGrid column="3">
-													<h:outputLabel value="Cedula" for= "cedula" />
-													<h:inputText  value="#{controladorUsuario.usu.cedula}" id="cedula" class="au-input au-input--full" placeholder="Nombre" />
-													<h:message for="cedula"/>
-												
-													<h:outputLabel value="Nombre" for= "nombre" />
-													<h:inputText value="#{controladorUsuario.usu.nombre}" id="nombre" class="au-input au-input--full" placeholder="Nombre" />
-													<h:message for="nombre"/>
-												
-													<h:outputLabel value="Apellido" for= "apellido" />
-													<h:inputText value="#{controladorUsuario.usu.apellido}" id="apellido" class="au-input au-input--full" placeholder="Nombre"/>
-													<h:message for="apellido"/>
-												
-													<h:outputLabel value="Telefono" for= "telefono" />
-													<h:inputText value="#{controladorUsuario.usu.telefono}" id="telefono" class="au-input au-input--full" placeholder="Nombre"/>
-													<h:message for="telefono"/>
-												
-													<h:outputLabel value="Usuario" for= "usuario" />
-													<h:inputText value="#{controladorUsuario.usu.usuario}" id="usuario"  class="au-input au-input--full" placeholder="Nombre"/>
-													<h:message for="usuario"/>
+														<h:outputLabel value="Codigo" for= "codigo" />
+														<h:inputText value="#{productoControlador.cate.categoria}" id="codigo" class="au-input au-input--full" placeholder="Nombre" />
+														<h:message for="codigo"/>
+														
+														<h:outputLabel value="Nombre" for= "nombre" />
+														<h:inputText value="#{categoriaControlador.cate.nombre}" id="contra"  class="au-input au-input--full"  placeholder="Nombre" />
+														<h:message for="nombre"/>
 													
-													<h:outputLabel value="Correo" for= "correo" />
-													<h:inputText value="#{controladorUsuario.usu.correo}" id="correo"  class="au-input au-input--full"  placeholder="Nombre" />
-													<h:message for="correo"/>
-											
-													<h:outputLabel value="Contraseña" for= "contra" />
-													<h:inputText value="#{controladorUsuario.usu.contrasena}" id="contra"  class="au-input au-input--full"  placeholder="Nombre" />
-													<h:message for="contra"/>
-													 <div class="card-header">
-													<h:commandButton  action="#{controladorUsuario.guardar()}" value="Guardar" class="au-btn au-btn--block au-btn--green m-b-20" />
-													</div>
-												</h:panelGrid>
+														<div class="card-header">
+														<h:commandButton action="#{categoriaControlador.guardar()}" value="Guardar" class="au-btn au-btn--block au-btn--green m-b-20" />
+														</div>
+														
+													</h:panelGrid>
 					                          </h:form>
 					                      </form>
 					                   </div>
@@ -132,8 +114,8 @@
                                 <i class="fa fa-home"></i>Pagina Principal</a>
                         </li>
                         <li>
-                            <a href="Usuarios.xhtml">
-                                <i class="fa fa-home"></i>Usuarios</a>
+                            <a href="Categorias.xhtml">
+                                <i class="fa fa-home"></i>Categorias</a>
                         </li>
                 	</ul>
                 </nav>

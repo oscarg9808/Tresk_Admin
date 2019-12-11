@@ -14,7 +14,7 @@
     <meta name="keywords" content="au theme template"></meta>
 
     <!-- Title Page-->
-    <title>Register</title>
+    <title>Editar Usuario</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all"></link>
@@ -50,6 +50,13 @@
                                 <img src="images/icon/Tresklogo.png" alt="CoolAdmin" width="150" height="500"/>
                             </a>
                         </div>
+						 <div class="card-header">
+				       	<h:form>
+				          	<h:inputText class="au-input--w300 au-input--style2" type="text" der="Buscar Usuarios" value="#{controladorUsuario.cedula}" id="usuc" />
+				        	<h:commandButton class="au-btn--submit" action="#{controladorUsuario.Buscar()}" value="Buscar">
+				        	</h:commandButton>
+				    	</h:form>
+                  		</div>
 					                    <div class="login-content">
 					                  		 <form action="" method="post">
 					                            <h:form>
@@ -82,7 +89,7 @@
 													<h:inputText value="#{controladorUsuario.usu.contrasena}" id="contra"  class="au-input au-input--full"  placeholder="Nombre" />
 													<h:message for="contra"/>
 													 <div class="card-header">
-													<h:commandButton  action="#{controladorUsuario.guardar()}" value="Guardar" class="au-btn au-btn--block au-btn--green m-b-20" />
+													<h:commandButton action="#{controladorUsuario.guardar()}" value="Guardar" class="au-btn au-btn--block au-btn--green m-b-20" />
 													</div>
 												</h:panelGrid>
 					                          </h:form>
@@ -130,10 +137,6 @@
                         <li>
                             <a href="PaginaPrincipal.xhtml">
                                 <i class="fa fa-home"></i>Pagina Principal</a>
-                        </li>
-                        <li>
-                            <a href="Usuarios.xhtml">
-                                <i class="fa fa-home"></i>Usuarios</a>
                         </li>
                 	</ul>
                 </nav>

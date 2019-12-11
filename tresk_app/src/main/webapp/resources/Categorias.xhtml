@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html" 
+		lang="en">
 
 <head>
     <!-- Required meta tags-->
@@ -37,8 +41,7 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER DESKTOP-->
-        <header class="header-desktop3 d-none d-lg-block">
+           <header class="header-desktop3 d-none d-lg-block">
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
@@ -172,9 +175,8 @@
                 </div>
             </div>
         </header>
-        <!-- END HEADER DESKTOP-->
-
         <!-- HEADER MOBILE-->
+        
         <header class="header-mobile header-mobile-2 d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
@@ -381,7 +383,7 @@
                                         <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                     </a>
                                 </div>
-                                <div class="content">
+                           	<div class="content">
                                     <h5 class="name">
                                         <a href="#">john doe</a>
                                     </h5>
@@ -415,26 +417,23 @@
 
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
-            <!-- BREADCRUMB-->
-            <section class="au-breadcrumb2">
+           
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="au-breadcrumb-content">
-                                
-                                <form class="au-form-icon--sm" action="" method="post">
-                                    <input class="au-input--w300 au-input--style2" type="text" placeholder="Buscar Usuarios."></input>
-                                    <button class="au-btn--submit2" type="submit">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </button>
-                                </form>
-                            </div>
+                            <h1 class="title-4">Todos las categorias
+                            </h1>
+                            <hr class="line-seprate"></hr>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- END WELCOME-->
+
             <!-- END BREADCRUMB-->
- <!-- MENU SIDEBAR-->
+<!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="PaginaPrincipal.xhtml">
@@ -452,28 +451,6 @@
                 </nav>
             </div>
         </aside>
-            <!-- WELCOME-->
-            <section class="welcome p-t-10">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="title-4">Todas las Categorias
-                            </h1>
-                            <hr class="line-seprate"></hr>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END WELCOME-->
-
-            <!-- STATISTIC-->
-            
-            <!-- END STATISTIC-->
-
-            <!-- STATISTIC CHART-->
-            
-            <!-- END STATISTIC CHART-->
-
             <!-- DATA TABLE-->
             <section class="p-t-20">
                 <div class="container">
@@ -488,188 +465,154 @@
                                             <option value="">Administradores</option>
                                         </select>
                                         <div class="dropDownSelect2"></div>
+                                         
                                     </div>
                                 </div>
-                                <div class="table-data__tool-right">
-                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                      	<i class="zmdi zmdi-plus"></i>Nueva Categoria</button>
-                                </div>
                             </div>
+                            
                             <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </th>
-                                            <th>name</th>
-                                            <th>email</th>
-                                            <th>description</th>
-                                            <th>date</th>
-                                            <th>status</th>
-                                            <th>price</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lori@example.com</span>
-                                            </td>
-                                            <td class="desc">Samsung S8 Black</td>
-                                            <td>2018-09-27 02:12</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$679.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">john@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 64Gb Grey</td>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$999.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lyn@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 256Gb Black</td>
-                                            <td>2018-09-25 19:03</td>
-                                            <td>
-                                                <span class="status--denied">Denied</span>
-                                            </td>
-                                            <td>$1199.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">doe@example.com</span>
-                                            </td>
-                                            <td class="desc">Camera C430W 4k</td>
-                                            <td>2018-09-24 19:10</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$699.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <h:form>
+								<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis">
+									<h:column >
+										<f:facet name="header"> Codigo</f:facet>
+										<h:outputText value="#{lis.id}" ></h:outputText>
+									</h:column>
+									<h:column >
+										<f:facet name="header"> Nombre</f:facet>
+										<h:outputText value="#{lis.nombre}"></h:outputText>
+									</h:column>
+									<h:column >
+                                  		<a href="EditarUsuario.xhtml">
+                                    	<button class="au-btn au-btn-load js-load-btn" >
+                                      	<i >EDITAR</i>
+                                      	</button> 
+                                 		</a>
+                                	</h:column>
+                                <h:column>
+								<h:commandButton action="#{categoriaControlador.eliminar(lis.id)}" value="Eliminar" class="au-btn au-btn-load js-load-btn" />
+								</h:column>
+								<div class="container">
+						                    <div class="row">
+						                        <div class="col-md-12">
+						                           
+						                            <hr class="line-seprate"></hr>
+						                        </div>
+						                    </div>
+						                </div>
+								</h:dataTable>
+							</h:form>
+							        <div class="page-content--bgf7">
+            <section class="welcome p-t-10">
+  
+			            </section>
+						
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <h:form>
+			                <div class="container">
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                          	<h:inputText class="au-input--w300 au-input--style2" type="text" der="Buscar Usuarios" value="#{categoriaControlador.pro}" id="ot"/>
+										<h:commandButton class="au-btn--submit" action="#{categoriaControlador.Buscar()}" value="Buscar">
+										</h:commandButton>
+			                        </div>
+			                    </div>
+			                </div>
+			          </h:form>	
+                    </div>
+                </div>
+          	  </div>
+            </section>
+           	<section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                           <h3>Categoria</h3>
+                            <hr class="line-seprate"></hr>
+                        </div>
+                    </div>
+                </div>
+            </section>
+				<h:form>
+					<h:panelGrid column="3">
+						<h:outputLabel value="Codigo" for= "codigo" />
+							<h:inputText value="#{categoriaControlador.cate.id}" id="codigo" class="au-input au-input--full" />
+								<h:message for="codigo"/>
+									<h:outputLabel value="Nombre" for= "nombre" />
+									<h:inputText value="#{categoriaControlador.cate.nombre}" id="nombre" class="au-input au-input--full"  />
+									<h:message for="nombre"/>
+								   	<section class="welcome p-t-10">
+					        	    <div class="container">
+									    <div class="row">
+								    	    <div class="col-md-12">
+								                <h3>Productos</h3>
+								                            <hr class="line-seprate"></hr>
+								                        </div>
+								                    </div>
+								                </div>
+								            </section>
+										<div class="container">
+						                    <div class="row">
+						                        <div class="col-md-12">
+						                          
+						                            <hr class="line-seprate"></hr>
+						                        </div>
+						                    </div>
+						                </div>
+										</h:panelGrid>
+										<div>
+										<h:commandButton action="#{categoriaControlador.addProductos()}"  class="au-btn au-btn-load js-load-btn" value="+ Productos" />
+										</div>
+										
+											
+										<h:dataTable lass="table table-data2" value="#{categoriaControlador.cate.productos}" var="Productos">
+											<h:column>
+												<f:facet name="header"> Codigo</f:facet>
+												<h:inputText value="#{Productos.id}" />
+												</h:column>
+												<h:column>
+												<f:facet name="header"> Nombre</f:facet>
+												<h:inputText value="#{Productos.nombre}" />
+												</h:column>
+												<h:column>
+												<f:facet name="header"> Descripcion</f:facet>
+												<h:inputText value="#{Productos.descripcion}" />
+												</h:column>
+												<h:column>
+												<f:facet name="header">Precio Unitario</f:facet>
+												<h:inputText value="#{Productos.precio_uni}" />
+											</h:column>
+										</h:dataTable>
+											<section class="welcome p-t-10">
+								                <div class="container">
+								                    <div class="row">
+								                        <div class="col-md-12">
+								                          <h:commandButton action="#{categoriaControlador.guardar()}" value="Guardar"  class="au-btn au-btn-load js-load-btn"/>
+								                            <hr class="line-seprate"></hr>
+								                        </div>
+								                    </div>
+								                </div>
+								            </section>
+									</h:form> 
+									        
+							</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- END DATA TABLE-->
-
+ 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2019 Aplicaciones Distribuidoas UPS</p>
+                                <p>Copyright © 2019 Aplicaciones Distribuidos UPS</p>
                             </div>
                         </div>
                     </div>

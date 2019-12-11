@@ -8,37 +8,78 @@
 
 <h:head></h:head> 
 <body>
-<h1> Nuevo Cliente</h1>
+<h1> Nuevo Usuario</h1>
 <h:form>
+
+	<h:commandButton action="#{controladorUsuario.Buscar()}" value="Buscar"/>
+	<h:inputText value="#{controladorUsuario.cedula}" id="usuc" />
+
 	<h:panelGrid column="3">
+		<h:outputLabel value="Cedula" for= "cedula" />
+		<h:inputText value="#{controladorUsuario.usu.cedula}" id="cedula" />
+		<h:message for="cedula"/>
+	
 		<h:outputLabel value="Nombre" for= "nombre" />
-		<h:inputText value="#{clienteControlador.cliente.nombre}" id="nombre" />
+		<h:inputText value="#{controladorUsuario.usu.nombre}" id="nombre" />
 		<h:message for="nombre"/>
 	
 		<h:outputLabel value="Apellido" for= "apellido" />
-		<h:inputText value="#{clienteControlador.cliente.apellido}" id="apellido" />
+		<h:inputText value="#{controladorUsuario.usu.apellido}" id="apellido" />
 		<h:message for="apellido"/>
 	
 		<h:outputLabel value="Telefono" for= "telefono" />
-		<h:inputText value="#{clienteControlador.cliente.telefono}" id="telefono" />
+		<h:inputText value="#{controladorUsuario.usu.telefono}" id="telefono" />
 		<h:message for="telefono"/>
 	
-		<h:outputLabel value="Correo" for= "correo" />
-		<h:inputText value="#{clienteControlador.cliente.correo}" id="correo" />
-		<h:message for="correo"/>
-	
 		<h:outputLabel value="Usuario" for= "usuario" />
-		<h:inputText value="#{clienteControlador.cliente.usuario}" id="usuario" />
+		<h:inputText value="#{controladorUsuario.usu.usuario}" id="usuario" />
 		<h:message for="usuario"/>
+		
+		<h:outputLabel value="Correo" for= "correo" />
+		<h:inputText value="#{controladorUsuario.usu.correo}" id="correo" />
+		<h:message for="correo"/>
 
 		<h:outputLabel value="Contraseña" for= "contra" />
-		<h:inputText value="#{clienteControlador.cliente.contrasena}" id="contra" />
+		<h:inputText value="#{controladorUsuario.usu.contrasena}" id="contra" />
 		<h:message for="contra"/>
 		
-		<h:commandButton action="#{clienteControlador.guardar()}" value="Guardar" />
+		<h:commandButton action="#{controladorUsuario.guardar()}" value="Guardar" />
 	
 	</h:panelGrid>
 		
+</h:form>
+
+
+ <h1> Listar Categorias </h1>
+<h:form>
+	 
+	<h:dataTable value="#{controladorUsuario.listarusuario()}" var="lis">
+	
+		<h:column>
+		<h:commandButton action="#{controladorUsuario.eliminar(lis.cedula)}" value="Eliminar" />
+	</h:column>	
+	<h:column>
+		<h:commandButton action="#{controladorUsuario.update()}" value="Editar" />
+	</h:column>
+		<h:column>
+			<f:facet name="header"> Codigo</f:facet>
+			<h:outputText value="#{lis.cedula}" ></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header"> Nombre</f:facet>
+			<h:outputText value="#{lis.nombre}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header"> Apellido</f:facet>
+			<h:outputText value="#{lis.apellido}"></h:outputText>
+		</h:column>
+			<f:facet name="header"> Telefono </f:facet>
+			<h:outputText value="#{lis.telefono}"></h:outputText>
+		<h:column>
+			<f:facet name="header"> Correo</f:facet>
+			<h:outputText value="#{lis.correo}"></h:outputText>
+		</h:column>
+	</h:dataTable>
 </h:form>
 </body> 
 </html>

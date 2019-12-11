@@ -8,7 +8,7 @@
 
 <h:head></h:head> 
 <body>
- <h1> Nueva Categoria </h1>
+ <h1> Nueva Categoria  con Productos</h1>
 <h:form>
 	<h:panelGrid column="3">
 		<h:outputLabel value="Codigo" for= "codigo" />
@@ -23,7 +23,7 @@
 				
 	</h:panelGrid>
 	
-	<h:commandButton action="#{categoriaControlador.addProductos()}" value="+ Productos"  immediate="true"/>
+	<h:commandButton action="#{categoriaControlador.addProductos()}" value="+ Productos" />
 	<h:commandButton action="#{categoriaControlador.Buscar()}" value="Buscar"/>
 	<h:inputText value="#{categoriaControlador.pro}" id="ot" />
 		

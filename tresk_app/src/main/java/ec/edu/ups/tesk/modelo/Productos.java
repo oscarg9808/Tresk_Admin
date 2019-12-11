@@ -12,6 +12,7 @@ public class Productos {
 		private String nombre;
 		private String descripcion;
 		private double precio_uni;
+		private int categoria;
 		
 		
 		public int getId() {
@@ -39,11 +40,18 @@ public class Productos {
 			this.precio_uni = precio_uni;
 		}
 		 
+		public int getCategoria() {
+			return categoria;
+		}
+		public void setCategoria(int categoria) {
+			this.categoria = categoria;
+		}
 		@Override
 		public String toString() {
 			return "Productos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio_uni="
-					+ precio_uni + "]";
+					+ precio_uni + ", categoria=" + categoria + "]";
 		}
+		
 		
 		
 		
