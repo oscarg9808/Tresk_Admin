@@ -50,6 +50,7 @@ public class CategoriaControlador {
 		public String Buscar() {
 			System.out.println(catdao.leer(pro));
 			catdao.leer(pro);
+			
 			return null;
 		}
 
