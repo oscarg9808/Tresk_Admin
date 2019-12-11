@@ -1,5 +1,7 @@
 package ec.edu.ups.tresk.controlador;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -35,6 +37,20 @@ public class CategoriaControlador {
 			this.cate = cate;
 		}
 
+
+		public int getPro() {
+			return pro;
+		}
+
+		public void setPro(int pro) {
+			this.pro = pro;
+		}
+		
+		
+		public List<Categorias> listarCategorias(){
+			return this.catdao.listar();
+		}
+		
 		public String addProductos() {
 			System.out.println("add prod");
 			cate.addProducto(new Productos());
@@ -49,19 +65,14 @@ public class CategoriaControlador {
 		
 		public String Buscar() {
 			System.out.println(catdao.leer(pro));
-			catdao.leer(pro);
-			
+			this.cate=catdao.leer(pro);
+						
 			return null;
 		}
-
-		public int getPro() {
-			return pro;
+		
+		public void eliminar(int codigo) {
+			catdao.borrar(codigo);			
 		}
 
-		public void setPro(int pro) {
-			this.pro = pro;
-		}
-		
-		
 		
 }
