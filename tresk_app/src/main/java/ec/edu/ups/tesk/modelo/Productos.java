@@ -2,8 +2,10 @@ package ec.edu.ups.tesk.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity (name="producto")
+@Table(name = "producto")
 public class Productos {
 
 		@Id 

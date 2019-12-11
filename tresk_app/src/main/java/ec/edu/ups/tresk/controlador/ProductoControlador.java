@@ -26,8 +26,6 @@ public class ProductoControlador {
 			prod = new Productos();
 			
 		}
- 
-		
 
 		public int getP() {
 			return p;
@@ -38,20 +36,18 @@ public class ProductoControlador {
 		}
 		
 
-
-		public Productos getCate() {
+		public Productos getProd() {
 			return prod;
 		}
 
 
 
-		public void setCate(Productos cate) {
-			this.prod = cate;
+		public void setProd(Productos prod) {
+			this.prod = prod;
 		}
 		
 		
-		
-		public List<Productos> listarCategorias(){
+		public List<Productos> listarP(){
 			return this.pdao.listar();
 		}
 		
@@ -77,6 +73,9 @@ public class ProductoControlador {
 			pdao.actualizar(prod);;
 			return null;
 		}
+
+
+
 
 
 }

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html" 
+		lang="en">
 
 <head>
     <!-- Required meta tags-->
@@ -10,7 +14,7 @@
     <meta name="keywords" content="au theme template"></meta>
 
     <!-- Title Page-->
-    <title>Productos</title>
+    <title>Usuarios</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all"></link>
@@ -37,8 +41,7 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER DESKTOP-->
-        <header class="header-desktop3 d-none d-lg-block">
+           <header class="header-desktop3 d-none d-lg-block">
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
@@ -111,8 +114,7 @@
                                             <i class="zmdi zmdi-globe"></i>Language</a>
                                     </div>
                                     <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-pin"></i>Location</a>
+                                            <i class="zmdi zmdi-pin"></i>Location
                                     </div>
                                     <div class="account-dropdown__item">
                                         <a href="#">
@@ -172,9 +174,8 @@
                 </div>
             </div>
         </header>
-        <!-- END HEADER DESKTOP-->
-
         <!-- HEADER MOBILE-->
+        
         <header class="header-mobile header-mobile-2 d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
@@ -415,26 +416,24 @@
 
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
-            <!-- BREADCRUMB-->
-            <section class="au-breadcrumb2">
+           
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="au-breadcrumb-content">
-                                
-                                <form class="au-form-icon--sm" action="" method="post">
-                                    <input class="au-input--w300 au-input--style2" type="text" placeholder="Buscar Usuarios."></input>
-                                    <button class="au-btn--submit2" type="submit">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </button>
-                                </form>
-                            </div>
+                            <h1 class="title-4">Todos los Productos
+                            
+                            </h1>
+                            <hr class="line-seprate"></hr>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- END WELCOME-->
+
             <!-- END BREADCRUMB-->
- <!-- MENU SIDEBAR-->
+<!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="PaginaPrincipal.xhtml">
@@ -452,28 +451,6 @@
                 </nav>
             </div>
         </aside>
-            <!-- WELCOME-->
-            <section class="welcome p-t-10">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="title-4">Productos
-                            </h1>
-                            <hr class="line-seprate"></hr>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END WELCOME-->
-
-            <!-- STATISTIC-->
-            
-            <!-- END STATISTIC-->
-
-            <!-- STATISTIC CHART-->
-            
-            <!-- END STATISTIC CHART-->
-
             <!-- DATA TABLE-->
             <section class="p-t-20">
                 <div class="container">
@@ -488,188 +465,104 @@
                                             <option value="">Administradores</option>
                                         </select>
                                         <div class="dropDownSelect2"></div>
+                                         
                                     </div>
                                 </div>
                                 <div class="table-data__tool-right">
-                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                      	<i class="zmdi zmdi-plus"></i>Nuevo Producto</button>
+                                <a href="NuevoProducto.xhtml">
+                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small" >
+                                      	<i class="zmdi zmdi-plus"></i>
+                                      	Nuevo Producto</button> 
+                                 </a>
+                                      	
                                 </div>
                             </div>
+                            
                             <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </th>
-                                            <th>name</th>
-                                            <th>email</th>
-                                            <th>description</th>
-                                            <th>date</th>
-                                            <th>status</th>
-                                            <th>price</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lori@example.com</span>
-                                            </td>
-                                            <td class="desc">Samsung S8 Black</td>
-                                            <td>2018-09-27 02:12</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$679.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">john@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 64Gb Grey</td>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$999.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lyn@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 256Gb Black</td>
-                                            <td>2018-09-25 19:03</td>
-                                            <td>
-                                                <span class="status--denied">Denied</span>
-                                            </td>
-                                            <td>$1199.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox"></input>
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">doe@example.com</span>
-                                            </td>
-                                            <td class="desc">Camera C430W 4k</td>
-                                            <td>2018-09-24 19:10</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$699.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <h:form>
+                            	<h:dataTable class="table table-data2" value="#{productoControlador.listarP()}" var="lis">
+									<h:column>
+										<h:commandButton action="#{productoControlador.eliminar(lis.id)}" value="Eliminar" />
+									</h:column>	
+										<h:column>
+											<f:facet name="header"> Codigo</f:facet>
+											<h:outputText value="#{lis.id}" ></h:outputText>
+										</h:column>
+										<h:column>
+											<f:facet name="header"> Nombre</f:facet>
+											<h:outputText value="#{lis.nombre}"></h:outputText>
+										</h:column>
+										<h:column>
+											<f:facet name="header"> Descripcion</f:facet>
+											<h:outputText value="#{lis.descripcion}"></h:outputText>
+										</h:column>
+										<h:column>
+											<f:facet name="header"> P_Unitario</f:facet>
+											<h:outputText value="#{lis.precio_uni}"></h:outputText>
+										</h:column>
+								</h:dataTable>
+                               </h:form>
+                                <div class="card-header">
+                                
+                                <section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title-4">Buscar
+                            </h1>
+                            <hr class="line-seprate"></hr>
+                        </div>
+                    </div>
+                </div>
+            </section>
+				       	<h:form>
+				          	<h:inputText class="au-input--w300 au-input--style2" type="text" der="Buscar Productos" value="#{productoControlador.p}" id="proid" />
+				        	<h:commandButton class="au-btn--submit" action="#{productoControlador.Buscar()}" value="Buscar">
+				        	</h:commandButton>
+				    	</h:form>
+                  		</div>
+					                    <div class="login-content">
+					                  		 <form action="" method="post">
+					                            <h:form>
+					                            	<h:panelGrid column="3">
+													<h:outputLabel value="codigo" for= "codigo" />
+													<h:inputText  value="#{productoControlador.prod.id}" id="codigo" class="au-input au-input--full"  />
+													<h:message for="codigo"/>
+												
+													<h:outputLabel value="Nombre" for= "nombre" />
+													<h:inputText value="#{productoControlador.prod.nombre}" id="nombre" class="au-input au-input--full" placeholder="Nombre" />
+													<h:message for="nombre"/>
+												
+													<h:outputLabel value="descripcion" for= "descripcion" />
+													<h:inputText value="#{productoControlador.prod.descripcion}" id="descripcion" class="au-input au-input--full" placeholder="descripcion"/>
+													<h:message for="descripcion"/>
+												
+													<h:outputLabel value="p_unio" for= "puni" />
+													<h:inputText value="#{productoControlador.prod.precio_uni}" id="puni" class="au-input au-input--full" placeholder="Nombre"/>
+													<h:message for="puni"/>
+													
+													 <div class="card-header">
+													<h:commandButton action="#{productoControlador.update()}" value="Actualizar" class="au-btn au-btn--block au-btn--green m-b-20" />
+													</div>
+												</h:panelGrid>
+					                          </h:form>
+					                      </form>
+					                   </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- END DATA TABLE-->
-
+            
+ 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2019 Aplicaciones Distribuidoas UPS</p>
+                                <p>Copyright © 2019 Aplicaciones Distribuidos UPS</p>
                             </div>
                         </div>
                     </div>

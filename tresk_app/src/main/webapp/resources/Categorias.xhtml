@@ -468,11 +468,12 @@
                                          
                                     </div>
                                 </div>
+
                             </div>
                             
                             <div class="table-responsive table-responsive-data2">
                             <h:form>
-								<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis">
+								<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
 									<h:column >
 										<f:facet name="header"> Codigo</f:facet>
 										<h:outputText value="#{lis.id}" ></h:outputText>
@@ -484,7 +485,7 @@
 									<h:column >
                                   		<a href="EditarUsuario.xhtml">
                                     	<button class="au-btn au-btn-load js-load-btn" >
-                                      	<i >EDITAR</i>
+                                      	<i >EDITAR</i> 
                                       	</button> 
                                  		</a>
                                 	</h:column>
@@ -564,7 +565,9 @@
 						                </div>
 										</h:panelGrid>
 										<div>
-										<h:commandButton action="#{categoriaControlador.addProductos()}"  class="au-btn au-btn-load js-load-btn" value="+ Productos" />
+										<h:commandButton action="#{categoriaControlador.addProductos()}"  class="au-btn au-btn-load js-load-btn" value="+ Productos" > 
+											<f:ajax render="lis" execute="@all"/>
+										</h:commandButton>
 										</div>
 										
 											

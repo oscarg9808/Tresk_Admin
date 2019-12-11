@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+ <h1> Listar Categorias </h1>
+<h:form>
+	<h:dataTable value="#{productoControlador.listarP()}" var="lis">
+	
+		<h:column>
+		<h:commandButton action="#{productoControlador.eliminar(lis.id)}" value="Eliminar" />
+	</h:column>	
+		<h:column>
+			<f:facet name="header"> Codigo</f:facet>
+			<h:outputText value="#{lis.id}" ></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header"> Nombre</f:facet>
+			<h:outputText value="#{lis.nombre}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header"> Descripcion</f:facet>
+			<h:outputText value="#{lis.descripcion}"></h:outputText>
+		</h:column>
+	</h:dataTable>
+</h:form>
+</body> 
+</html>

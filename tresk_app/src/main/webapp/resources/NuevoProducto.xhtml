@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html" 
+		lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta name="description" content="au theme template"></meta>
+    <meta name="author" content="Hau Nguyen"></meta>
+    <meta name="keywords" content="au theme template"></meta>
+
+    <!-- Title Page-->
+    <title>Nuevo Producto</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all"></link>
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"></link>
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all"></link>
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all"></link>
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all"></link>
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="#">
+                                <img src="images/icon/Tresklogo.png" alt="CoolAdmin" width="150" height="500"/>
+                            </a>
+                        </div>
+                        	<div class="col-md-12">
+                            <h1 class="title-4">Categorias Disponibles
+                            </h1>
+                            <hr class="line-seprate"></hr>
+                            </div>
+                        		<h:form>
+								<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
+									<h:column >
+										<f:facet name="header"> Codigo</f:facet>
+										<h:outputText value="#{lis.id}" ></h:outputText>
+									</h:column>
+									<h:column >
+										<f:facet name="header"> Nombre</f:facet>
+										<h:outputText value="#{lis.nombre}"></h:outputText>
+									</h:column>
+								<div class="container">
+						                    <div class="row">
+						                        <div class="col-md-12">
+						                           
+						                            <hr class="line-seprate"></hr>
+						                        </div>
+						                    </div>
+						                </div>
+								</h:dataTable>
+							</h:form>
+					                    <div class="login-content">
+					                  		 <form action="" method="post">
+					                            <h:form>
+					                            	<h:panelGrid column="3">
+													<h:outputLabel value="codigo" for= "codigo" />
+													<h:inputText  value="#{productoControlador.prod.id}" id="codigo" class="au-input au-input--full" placeholder="Nombre" />
+													<h:message for="codigo"/>
+												
+													<h:outputLabel value="Nombre" for= "nombre" />
+													<h:inputText value="#{productoControlador.prod.nombre}" id="nombre" class="au-input au-input--full" placeholder="Nombre" />
+													<h:message for="nombre"/>
+												
+													<h:outputLabel value="Descripcion" for= "Descripcion" />
+													<h:inputText value="#{productoControlador.prod.descripcion}" id="Descripcion" class="au-input au-input--full" placeholder="Nombre"/>
+													<h:message for="Descripcion"/>
+												
+													<h:outputLabel value="p_uni" for= "p_uni" />
+													<h:inputText value="#{productoControlador.prod.precio_uni}" id="p_uni" class="au-input au-input--full" placeholder="Nombre"/>
+													<h:message for="p_uni"/>
+												
+													<h:outputLabel value="Categoria" for= "Categora" />
+													<h:inputText value="#{productoControlador.prod.categoria}" id="Categoria"  class="au-input au-input--full" placeholder="Nombre"/>
+													<h:message for="Categoria"/>
+													
+													
+													 <div class="card-header">
+													<h:commandButton  action="#{productoControlador.guardar()}" value="Guardar" class="au-btn au-btn--block au-btn--green m-b-20" />
+													</div>
+												</h:panelGrid>
+					                          </h:form>
+					                      </form>
+					                   </div>
+					               </div>
+					           </div>
+					        </div>
+					     </div>
+                    </div> 
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+</body>
+ 		<aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="PaginaPrincipal.xhtml">
+                   <img src="images/icon/Tresklogo.png" alt="CoolAdmin" width="130" height="500"/>
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="PaginaPrincipal.xhtml">
+                                <i class="fa fa-home"></i>Pagina Principal</a>
+                        </li>
+                        <li>
+                            <a href="Productos.xhtml">
+                                <i class="fa fa-home"></i>Producto</a>
+                        </li>
+                	</ul>
+                </nav>
+            </div>
+        </aside>
+
+
+   
+</html>
+<!-- end document-->

@@ -37,7 +37,7 @@ public class ProductoDAO {
 	}
 
 	public List<Productos> listar() { 
-		return em.createQuery("Select u from categorias u", Productos.class).getResultList();
+		return em.createQuery("Select u from producto u", Productos.class).getResultList();
 	}
 
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ec.edu.ups.tesk.datos.UsuarioDAO;
@@ -12,6 +13,7 @@ import ec.edu.ups.tesk.modelo.Usuario;
 
 
 @ManagedBean
+@ViewScoped
 public class ControladorUsuario {
 
 
