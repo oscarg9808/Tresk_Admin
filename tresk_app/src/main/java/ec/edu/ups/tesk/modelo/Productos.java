@@ -14,6 +14,13 @@ public class Productos {
 		private String nombre;
 		private String descripcion;
 		private double precio_uni;
+		private String urlImagen;
+		public String getUrlImagen() {
+			return urlImagen;
+		}
+		public void setUrlImagen(String urlImagen) {
+			this.urlImagen = urlImagen;
+		}
 		private int categoria;
 		
 		
