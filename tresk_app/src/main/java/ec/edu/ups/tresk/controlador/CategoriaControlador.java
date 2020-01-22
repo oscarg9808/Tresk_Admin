@@ -78,5 +78,4 @@ public class CategoriaControlador {
 			catdao.actualizar(cate);;
 			return null;
 		}
-		
 }

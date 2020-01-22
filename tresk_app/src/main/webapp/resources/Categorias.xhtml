@@ -482,13 +482,6 @@
 										<f:facet name="header"> Nombre</f:facet>
 										<h:outputText value="#{lis.nombre}"></h:outputText>
 									</h:column>
-									<h:column >
-                                  		<a href="EditarUsuario.xhtml">
-                                    	<button class="au-btn au-btn-load js-load-btn" >
-                                      	<i >EDITAR</i> 
-                                      	</button> 
-                                 		</a>
-                                	</h:column>
                                 <h:column>
 								<h:commandButton action="#{categoriaControlador.eliminar(lis.id)}" value="Eliminar" class="au-btn au-btn-load js-load-btn" />
 								</h:column>

@@ -18,7 +18,7 @@ public class UsuarioDAO {
 	
 	public void insertar(Usuario c) {
 		em.persist(c);
-	}  
+	} 
 	
 	public void actualizar(Usuario c) {
 		em.merge(c);
@@ -30,6 +30,9 @@ public class UsuarioDAO {
 		return null;
 	}
 	
+	public Usuario buscar(String ced2) {
+		return em.find(Usuario.class, ced2);
+	}
 	
 	public Usuario leer(String cedu) {
 		return em.find(Usuario.class, cedu);
@@ -38,5 +41,4 @@ public class UsuarioDAO {
 	public List<Usuario> listar() { 
 		return em.createQuery("Select u from usuario u", Usuario.class).getResultList();
 	}
-
 }

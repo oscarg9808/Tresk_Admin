@@ -52,20 +52,18 @@ public class ControladorUsuario {
 		return null;
 	}
 
-	/*public String Buscarusu(String cedu) {
-		setCedula(usdao.actualizar(cedu));
-		System.out.println("salida "+ cedula);
-		return null;
-	}*/
-	
-	
+
 	public String Buscar() {
 		System.out.println(usdao.leer(cedula));
 		this.usu=usdao.leer(this.cedula);	
 		return null;
 	}
-		
 	
+	public Usuario login(String ced2) {
+		Usuario u =usdao.buscar(ced2);
+		return u;
+	}
+		
 	public String eliminar(String cedula) {
 		usdao.borrar(cedula);	
 		return null;
@@ -73,6 +71,11 @@ public class ControladorUsuario {
 	
 	public String update() {
 		usdao.actualizar(usu);;
+		return null;
+	}
+	
+	public String Guardarusu(Usuario usu1) {
+		usdao.insertar(usu1);
 		return null;
 	}
 
