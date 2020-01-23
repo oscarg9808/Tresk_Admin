@@ -10,6 +10,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import ec.edu.ups.tesk.ON.CategoriasOn;
 import ec.edu.ups.tesk.datos.ProductoDAO;
 import ec.edu.ups.tesk.modelo.Productos;
 import ec.edu.ups.tresk.Bean.ProductoBean;
@@ -22,54 +23,30 @@ public class ProductosService {
 
 	@Inject 
 	private ProductoDAO prodao;
-	private ProductoBean proc;
+	@Inject
+	private CategoriasOn ca;
+	@Inject
+	private ProductoBean pc;
 	
-	/*@GET
-	@Path("/listaprod")
-	@Produces ("application/json")
-	public List<Productos> listarproducto(){
-		return prodao.listar();
-	}*/
+	@GET
+	@Path("/ProductosLis")
+	@Produces("application/json")
+	public List<Productos> getProductos(){
+		return pc.listarP();
+	}
 	
-	/*@POST
-	@Path("/login")
+	@POST
+	@Path("/busproducto")
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Respuesta login(Usuario usuario) {
-		Respuesta re = new Respuesta();
+	public Productos  producto(Productos p) {
+		Productos pr = new Productos();
 		try {
-			Usuario u = conon.login(usuario.getCedula());
-			if(usuario.getContrasena().equals(u.getCedula())) {
-				re.setId("1");
-				re.setMens("Credenciales Correctas");
-			}else {
-				re.setId("99");
-				re.setMens("Error, Contrasea incorrecta");
-			}
-			
+			pr = ca.getProducto(p.getId());
+			return pr;
 		}catch (Exception e) {
-			re.setId("9");
-			re.setMens("Error");
+			System.out.println("error en curso");
 		}
-		return re;
-	}*/
-	
-	/*@POST
-	@Path("/insertar")
-	@Produces("application/json")
-	@Consumes("application/json")
-	public Respuesta insertar(Usuario usuario) {
-		Respuesta r= new Respuesta();
-		try {
-			String nue = conon.Guardarusu(usuario);
-			r.setId("1");
-			r.setMens("Guardado");
-					
-		}catch (Exception e) {
-			r.setId("99");
-			r.setMens("Error, al guardar");
-			System.out.println(e);
-		}
-		return r;
-	}*/
+		return pr;
+	}
 }

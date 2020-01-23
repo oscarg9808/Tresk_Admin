@@ -12,9 +12,7 @@ public class UsuarioON {
 	
 	@Inject
 	private UsuarioDAO usuarioDAO;
-	
-	
-	
+
 	public void CrearUsuario(Usuario usuario) {
 		usuarioDAO.insertar(usuario);
 	}

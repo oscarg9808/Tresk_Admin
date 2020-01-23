@@ -22,13 +22,13 @@ public class Productos {
 		private double precio_uni;
 		private String urlImagen;
 		
-		@OneToMany
+		/*@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 		@JoinColumn(name="producto", referencedColumnName = "id")
-		private List<Voto> voto;
+		private List<Carrito> carrito ;*/
 		
-		@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+		@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 		@JoinColumn(name="producto", referencedColumnName = "id")
-		private List<Carrito> carrito ;
+		private List<Factura_Detalle> fdetalle ;
 
 		public int getId() {
 			return id;
@@ -70,26 +70,27 @@ public class Productos {
 			this.urlImagen = urlImagen;
 		}
 
-		public List<Voto> getVoto() {
-			return voto;
-		}
-
-		public void setVoto(List<Voto> voto) {
-			this.voto = voto;
-		}
-
-		public List<Carrito> getCarrito() {
+		/*public List<Carrito> getCarrito() {
 			return carrito;
 		}
 
 		public void setCarrito(List<Carrito> carrito) {
 			this.carrito = carrito;
+		}*/
+
+		/*public List<Factura_Detalle> getFdetalle() {
+			return fdetalle;
+		}
+
+		public void setFdetalle(List<Factura_Detalle> fdetalle) {
+			this.fdetalle = fdetalle;
 		}
 
 		@Override
 		public String toString() {
 			return "Productos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio_uni="
-					+ precio_uni + ", urlImagen=" + urlImagen + ", voto=" + voto + ", carrito=" + carrito + "]";
-		}
-		
+					+ precio_uni + ", urlImagen=" + urlImagen + ", carrito=" + carrito + ", fdetalle=" + fdetalle + "]";
+		}*/
+
+
 }

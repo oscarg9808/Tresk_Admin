@@ -21,10 +21,10 @@ public class Servicio {
 	
 	
 	@GET
-	@Path("/productos")
+	@Path("/productosl")
 	@Produces("application/json")
 	@Consumes("application/json")
-	public List<Productos> realizaCredito() {
+	public List<Productos> productosl() {
 		
 		return categoriasOn.getProductos();
 	}

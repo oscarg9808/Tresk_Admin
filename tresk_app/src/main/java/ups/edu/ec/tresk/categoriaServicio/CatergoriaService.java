@@ -39,7 +39,7 @@ public class CatergoriaService {
 	}
 	
 	@GET
-	@Path("/productosLis")
+	@Path("/ProductosLisss")
 	@Produces("application/json")
 	public List<Productos> getProductos(){
 		return pc.listarP();

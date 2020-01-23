@@ -23,8 +23,8 @@ import ec.edu.ups.tresk.Bean.ProductoBean;
  *
  */
 @Path("/Usu")
-public class UsuarioService {
-	
+public class UsuarioSrv {
+
 	/**
 	 * injet sirve para traer metodos del objeto de negocio
 	 */
