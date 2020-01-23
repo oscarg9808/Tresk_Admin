@@ -9,6 +9,7 @@ import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ec.edu.ups.tesk.datos.ProductoDAO;
+import ec.edu.ups.tesk.modelo.Categorias;
 import ec.edu.ups.tesk.modelo.Productos;
 
 @ManagedBean
@@ -50,7 +51,7 @@ public class ProductoBean {
 		public List<Productos> listarP(){
 			return this.pdao.listar();
 		}
-		
+				
 
 		public String guardar() {
 			System.out.println(prod);

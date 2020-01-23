@@ -1,5 +1,7 @@
 package ec.edu.ups.tresk.servicios;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -9,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import ec.edu.ups.tesk.ON.UsuarioON;
+import ec.edu.ups.tesk.modelo.Categorias;
 import ec.edu.ups.tesk.modelo.Usuario;
 import ec.edu.ups.tresk.Bean.UsuarioBean;
 
@@ -19,6 +22,7 @@ public class UsuarioService {
 	private UsuarioBean conon;
 	@Inject
 	private UsuarioON usuarioON;
+
 	
 	
 	@POST
@@ -61,5 +65,12 @@ public class UsuarioService {
 			return false;
 		}
 	
+	}
+	
+	@GET
+	@Path("/usulist")
+	@Produces("application/json")
+	public List<Usuario> getUsuarios(){
+		return conon.listarusuario(); 
 	}
 }
