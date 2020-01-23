@@ -31,7 +31,7 @@ public class UsuarioService {
 			Usuario u = conon.login(usuario.getCedula());
 			if(usuario.getContrasena().equals(u.getContrasena())) {
 				re.setId(1);
-				re.setMens("Credenciales Correctas");
+				re.setMens("Credenciales Correctas"); 
 			}else {
 				re.setId(99);
 				re.setMens("Error, Contrasea incorrecta");
@@ -44,6 +44,7 @@ public class UsuarioService {
 		return re;
 	}
 	
+
 	@POST
 	@Path("/usuario")
 	@Consumes("application/json")
