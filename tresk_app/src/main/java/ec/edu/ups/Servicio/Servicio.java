@@ -16,7 +16,7 @@ import ec.edu.ups.tesk.modelo.Productos;
 @Path("/tresk")
 public class Servicio {
 	
-	@Inject
+/*	@Inject
 	private CategoriasOn categoriasOn;
 	
 	
@@ -28,5 +28,5 @@ public class Servicio {
 		
 		return categoriasOn.getProductos();
 	}
-
+*/
 }

@@ -1,4 +1,4 @@
-package ec.edu.ups.tresk.servicios;
+package ups.edu.ec.tresk.categoriaServicio;
 
 
 import java.util.List;
@@ -17,28 +17,18 @@ import ec.edu.ups.tesk.modelo.Usuario;
 import ec.edu.ups.tresk.Bean.CategoriaBean;
 import ec.edu.ups.tresk.Bean.UsuarioBean;
 import ec.edu.ups.tresk.Bean.ProductoBean;
-/**
- * 
- * @author Oscar Pizarro, Jose Atariguano
- *
- */
+
+
 @Path("/Usu")
 public class UsuarioSrv {
 
-	/**
-	 * injet sirve para traer metodos del objeto de negocio
-	 */
-	@Inject 
+	/*@Inject 
 	private UsuarioBean conon;
 	@Inject
 	private ProductoBean pcon;
 	@Inject
 	private CategoriaBean ccon;
-	
-	/**
-	 * @param GET permite extraer paramtros llamados
-	 * @return una lsita de usuarios
-	 */
+
 	@GET
 	@Path("/lista")
 	@Produces ("application/json")
@@ -59,12 +49,7 @@ public class UsuarioSrv {
 	public List<Categorias> listarcat(){
 		return ccon.listarCategorias();
 	}
-	
-	/**
-	 * 
-	 * @param POST pertmite enviar parametros para realziar acciones
-	 * @return retorna un usuario
-	 */
+
 	@POST
 	@Path("/login")
 	@Consumes("application/json")
@@ -105,6 +90,6 @@ public class UsuarioSrv {
 			System.out.println(e);
 		}
 		return r;
-	}
+	}*/
 		
 }

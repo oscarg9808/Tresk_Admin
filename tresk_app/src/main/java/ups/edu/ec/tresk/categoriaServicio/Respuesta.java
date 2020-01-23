@@ -1,4 +1,4 @@
-package ec.edu.ups.tresk.servicios;
+package ups.edu.ec.tresk.categoriaServicio;
 
 public class Respuesta {
 	

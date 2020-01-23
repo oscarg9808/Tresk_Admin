@@ -22,7 +22,7 @@ import ec.edu.ups.tresk.Bean.ProductoBean;
 @Path("/tienda")
 public class CatergoriaService {
 
-	@Inject
+	/*@Inject
 	private CategoriaBean cc;
 	@Inject
 	private ProductoBean pc;
@@ -92,6 +92,6 @@ public class CatergoriaService {
 			return false;
 		}
 	
-	}
+	}*/
 		
 }
