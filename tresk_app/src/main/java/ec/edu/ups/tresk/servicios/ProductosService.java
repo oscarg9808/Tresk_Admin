@@ -12,7 +12,7 @@ import javax.ws.rs.Produces;
 
 import ec.edu.ups.tesk.datos.ProductoDAO;
 import ec.edu.ups.tesk.modelo.Productos;
-import ec.edu.ups.tresk.controlador.ProductoControlador;
+import ec.edu.ups.tresk.Bean.ProductoBean;
 
 
 
@@ -22,7 +22,7 @@ public class ProductosService {
 
 	@Inject 
 	private ProductoDAO prodao;
-	private ProductoControlador proc;
+	private ProductoBean proc;
 	
 	/*@GET
 	@Path("/listaprod")

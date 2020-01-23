@@ -15,17 +15,17 @@ import ec.edu.ups.tesk.ON.UsuarioON;
 import ec.edu.ups.tesk.modelo.Categorias;
 import ec.edu.ups.tesk.modelo.Productos;
 import ec.edu.ups.tesk.modelo.Usuario;
-import ec.edu.ups.tresk.controlador.CategoriaControlador;
-import ec.edu.ups.tresk.controlador.ControladorUsuario;
-import ec.edu.ups.tresk.controlador.ProductoControlador;
+import ec.edu.ups.tresk.Bean.CategoriaBean;
+import ec.edu.ups.tresk.Bean.UsuarioBean;
+import ec.edu.ups.tresk.Bean.ProductoBean;
 
 @Path("/tienda")
 public class CatergoriaService {
 
 	@Inject
-	private CategoriaControlador cc;
+	private CategoriaBean cc;
 	@Inject
-	private ProductoControlador pc;
+	private ProductoBean pc;
 	@Inject
 	private CategoriasOn ca;
 	@Inject
@@ -83,7 +83,6 @@ public class CatergoriaService {
 			u.setContrasena(contrasena);
 			u.setCorreo(correo);
 			u.setTelefono(telefono);
-			u.setUsuario("user");
 			usuarioON.CrearUsuario(u);
 			System.out.println(u.toString());
 			return true;

@@ -1,8 +1,14 @@
 package ec.edu.ups.tesk.modelo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +24,10 @@ public class Tarjeta {
 	private String fechaV;
 	@Column (length = 4)
 	private int numVeri;
+	
+	/*@OneToMany (cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="tarjeta", referencedColumnName = "id")
+	private List<Factura_Cabecera> fcabecera;
 	
 	public int getId() {
 		return id;
@@ -47,5 +57,5 @@ public class Tarjeta {
 	@Override
 	public String toString() {
 		return "Tarjeta [id=" + id + ", numero=" + numero + ", fechaV=" + fechaV + ", numVeri=" + numVeri + "]";
-	}		
+	}		*/
 }

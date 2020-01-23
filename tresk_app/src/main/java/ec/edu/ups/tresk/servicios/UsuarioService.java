@@ -14,9 +14,9 @@ import javax.ws.rs.Produces;
 import ec.edu.ups.tesk.modelo.Categorias;
 import ec.edu.ups.tesk.modelo.Productos;
 import ec.edu.ups.tesk.modelo.Usuario;
-import ec.edu.ups.tresk.controlador.CategoriaControlador;
-import ec.edu.ups.tresk.controlador.ControladorUsuario;
-import ec.edu.ups.tresk.controlador.ProductoControlador;
+import ec.edu.ups.tresk.Bean.CategoriaBean;
+import ec.edu.ups.tresk.Bean.UsuarioBean;
+import ec.edu.ups.tresk.Bean.ProductoBean;
 /**
  * 
  * @author Oscar Pizarro, Jose Atariguano
@@ -29,11 +29,11 @@ public class UsuarioService {
 	 * injet sirve para traer metodos del objeto de negocio
 	 */
 	@Inject 
-	private ControladorUsuario conon;
+	private UsuarioBean conon;
 	@Inject
-	private ProductoControlador pcon;
+	private ProductoBean pcon;
 	@Inject
-	private CategoriaControlador ccon;
+	private CategoriaBean ccon;
 	
 	/**
 	 * @param GET permite extraer paramtros llamados

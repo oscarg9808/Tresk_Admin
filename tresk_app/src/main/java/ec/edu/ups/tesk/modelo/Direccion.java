@@ -31,7 +31,7 @@ public class Direccion {
 	private int codpstal;
 	
 	@OneToMany (cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="categoria", referencedColumnName = "id")
+	@JoinColumn(name="direccion", referencedColumnName = "id")
 	private List<Factura_Cabecera> fcabecera;
 
 	public int getId() {

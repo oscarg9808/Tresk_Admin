@@ -1,4 +1,4 @@
-package ec.edu.ups.tresk.controlador;
+package ec.edu.ups.tresk.Bean;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import ec.edu.ups.tesk.modelo.Productos;
 
 @ManagedBean
 @ViewScoped
-public class CategoriaControlador {
+public class CategoriaBean {
 
 		private Categorias cate;
 		public int pro;
