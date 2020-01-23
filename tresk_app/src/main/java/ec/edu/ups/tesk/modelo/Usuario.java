@@ -1,10 +1,18 @@
 package ec.edu.ups.tesk.modelo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Entity (name="usuario")
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 	
 	@Id
@@ -16,14 +24,24 @@ public class Usuario {
 	private String apellido;
 	@Column (length = 10)
 	private String telefono;
-	@Column (length = 25)
-	private String usuario; 	
+	@Column (length = 45)
 	private String correo;
+	@Column (length = 45)
 	private String contrasena;
 	private Boolean admin;
 	
 	
-	public String getCedula() {
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
+	@JoinColumn(name="usuario", referencedColumnName = "cedula")
+	private List<Tarjeta> trajeta;
+	
+	
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="usuario", referencedColumnName = "cedula")
+	private List<Direccion> direccion;
+	
+	
+	public String getCedula() {		
 		return cedula;
 	}
 	public void setCedula(String cedula) {
@@ -47,12 +65,6 @@ public class Usuario {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
 	public String getCorreo() {
 		return correo;
 	}
@@ -72,14 +84,23 @@ public class Usuario {
 		this.admin = admin;
 	}
 	
+	public List<Tarjeta> getTrajeta() {
+		return trajeta;
+	}
+	public void setTrajeta(List<Tarjeta> trajeta) {
+		this.trajeta = trajeta;
+	}
+	public List<Direccion> getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(List<Direccion> direccion) {
+		this.direccion = direccion;
+	}
+	
 	@Override
 	public String toString() {
 		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", usuario=" + usuario + ", correo=" + correo + ", contrasena=" + contrasena + ", admin=" + admin
-				+ "]";
+				+ ", usuario=" + ", correo=" + correo + ", contrasena=" + contrasena + ", admin=" + admin
+				+ ", trajeta=" + trajeta + ", direccion=" + direccion + "]";
 	}
-	
-	
-	
-	
 }
