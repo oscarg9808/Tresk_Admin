@@ -30,10 +30,7 @@
 		<h:outputLabel value="Telefono" for= "telefono" />
 		<h:inputText value="#{controladorUsuario.usu.telefono}" id="telefono" />
 		<h:message for="telefono"/>
-	
-		<h:outputLabel value="Usuario" for= "usuario" />
-		<h:inputText value="#{controladorUsuario.usu.usuario}" id="usuario" />
-		<h:message for="usuario"/>
+
 		
 		<h:outputLabel value="Correo" for= "correo" />
 		<h:inputText value="#{controladorUsuario.usu.correo}" id="correo" />
@@ -81,5 +78,23 @@
 		</h:column>
 	</h:dataTable>
 </h:form>
+
+<div>
+<h:form>
+												<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
+													<h:column >
+														<f:facet name="header"><i class="mb-4">Codigo</i></f:facet>
+														<h:outputText value="#{lis.id}" ></h:outputText>
+													</h:column>
+													<h:column >
+														<f:facet name="header"><i class="mb-4"> Nombre</i></f:facet>
+														<h:outputText value="#{lis.nombre}"></h:outputText>
+													</h:column>
+                                					<h:column>
+														<h:commandButton action="#{categoriaControlador.eliminar(lis.id)}" value="Eliminar" class="btn btn-danger" />
+													</h:column>
+											</h:dataTable>
+										</h:form>
+</div>
 </body> 
 </html>

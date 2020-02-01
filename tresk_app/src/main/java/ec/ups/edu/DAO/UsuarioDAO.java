@@ -17,6 +17,8 @@ public class UsuarioDAO {
 	@Inject
 	private EntityManager entitymanager;
 	
+	private Usuario us;
+	
 	
 	public void insertar(Usuario c) {
 		entitymanager.persist(c);
@@ -51,9 +53,5 @@ public class UsuarioDAO {
 	      return result;
 	}
 	
-	
-	
 
-	
-	
 }

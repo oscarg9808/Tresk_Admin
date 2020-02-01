@@ -10,12 +10,6 @@ import javax.persistence.EntityManager;
 
 import ec.edu.ups.modelo.Categorias;
 
-
-
-
-/*
- * Modelo de la clase Categoria
- */
 @Stateless
 public class CategoriaDAO {
 	

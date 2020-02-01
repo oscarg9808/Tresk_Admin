@@ -26,7 +26,7 @@ public class CategoriaControlador {
 		@PostConstruct
 		private void init() {
 			cate = new Categorias();
-			cate.addProducto(new Productos());
+			//cate.addProducto(new Productos());
 			
 		}
 
@@ -76,7 +76,7 @@ public class CategoriaControlador {
 		}
 		
 		public String update() {
-			catdao.actualizar(cate);;
+			catdao.actualizar(cate);
 			return null;
 		}
 		
