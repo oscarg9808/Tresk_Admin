@@ -299,11 +299,14 @@
 								<div class="input-group">
 				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Usuarios" value="#{productoControlador.p}" id="prod" />
 				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{productoControlador.Buscar()}" value="Buscar" id="bus">
-				        				 <f:ajax execute="prod" render=":codigo :nombre :descripcion :categoria :imagen :precio"/>
+				        				 <f:ajax execute="prod" render="codigo nombre descripcion categoria imagen precio"/>
 				        			</h:commandButton>
 				        		</div>
-				        		
-				        		<div class="form-group">
+				        	</div>
+				    	</h:form>
+							<p>
+                           		<h:form>
+                               		<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Codigo</div>
                                     	   	<h:inputText value="#{productoControlador.prod.id}" id="codigo" class="form-control-success form-control"/>
@@ -367,13 +370,6 @@
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 										<h:commandButton action="#{productoControlador.update()}" value="Actualizar" class="btn btn-primary"/>
 									</div>
-                                	</div>
-                                	</h:form>
-				        	</div>
-				    	
-							<p>
-                           		<h:form>
-                               		
                                 </h:form>
 							</p>
 						</div>
@@ -383,7 +379,7 @@
 			<!-- end  Editar Usuario -->
 	
 	
-
+    </div>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
