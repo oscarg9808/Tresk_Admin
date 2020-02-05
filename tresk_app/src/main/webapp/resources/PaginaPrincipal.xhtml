@@ -46,7 +46,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                             <img src="images/icon/Tresklogo.png" alt="CoolAdmin" width="130" height="500"/>
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -164,7 +164,9 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>10368</h2>
+                                            <h:form>
+                                            	<h2><h:outputText value="#{controladorUsuario.listarusuario().size()}" /></h2>
+                                            </h:form>
                                                 <span>Clientes</span>
                                             </div>
                                         </div>
@@ -182,8 +184,10 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>Producto mas Vendido</span>
+                                           	<h:form>
+                                            	<h2><h:outputText value="#{productoControlador.resporteDeProductos().get(0).nombre}" /></h2>
+                                            </h:form>
+                                                <span><p>Producto mas Vendido</p></span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -200,7 +204,9 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
+                                            <h:form>
+                                            	<h2><h:outputText value="#{categoriaControlador.listarCategorias().size()}" /></h2>
+                                            </h:form>
                                                 <span>Categorias</span>
                                             </div>
                                         </div>
@@ -236,10 +242,6 @@
                             </div>
                             <h:form>
                             	<h:dataTable class="table table-data2" value="#{productoControlador.resporteDeProductos()}" var="lis">
-									<h:column>
-										<f:facet name="header"> Codigo </f:facet>
-										<h:outputText value="#{lis.idProducto}" ></h:outputText>
-									</h:column>
 									<h:column>
 										<f:facet name="header"> Nombre</f:facet>
 										<h:outputText value="#{lis.nombre}"></h:outputText>

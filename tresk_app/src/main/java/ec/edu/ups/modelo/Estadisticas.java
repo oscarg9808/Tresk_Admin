@@ -33,7 +33,4 @@ public class Estadisticas implements Comparable<Estadisticas> {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
-	
-
 }

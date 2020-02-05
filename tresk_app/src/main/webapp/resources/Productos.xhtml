@@ -125,10 +125,6 @@
                                       		<h:form>
 				                            	<h:dataTable class="table table-data2" value="#{productoControlador.listarP()}" var="prod">
 													<h:column>
-														<f:facet name="header"> Cedula </f:facet>
-														<h:outputText value="#{prod.id}"></h:outputText>
-													</h:column>
-													<h:column>
 														<f:facet name="header"> Nombre</f:facet>
 														<h:outputText value="#{prod.nombre}"></h:outputText>
 													</h:column>
@@ -139,17 +135,16 @@
 													<h:column>
 														<f:facet name="header"> Categoria </f:facet>
 														<h:outputText value="#{prod.categoria}"></h:outputText>
-													</h:column>
-													<h:column>
-														<f:facet name="header"> Imagen</f:facet>
-														<h:outputText value="#{prod.urlImagen}"></h:outputText>
-													</h:column>
-													
+													</h:column>													
 													<h:column>
 														<f:facet name="header"> Precio </f:facet>
 														<h:outputText value="#{prod.precio_uni}"></h:outputText>
 													</h:column>
 													
+													<h:column>
+														<f:facet name="header"> Imagen</f:facet>
+														<img src="#{prod.urlImagen}" width="50" height="50"/>
+													</h:column>
 													<h:column class="">
 						                            	<h:commandButton action="#{productoControlador.eliminar(prod.id)}" value="Eliminar" class="btn btn-danger"/>
 				                                   </h:column>
@@ -186,17 +181,7 @@
 						</div>
 						<div class="modal-body">
 							<p>
-                           		<h:form>
-                               		<div class="form-group">
-                                    	<div class="input-group">
-                                        	<div class="input-group-addon">Codigo</div>
-                                    	    <h:inputText  value="#{productoControlador.prod.id}" id="id" class="form-control-success form-control"/>
-                                            <div class="input-group-addon">
-                                            	<i class="fa fa-id-card"></i>
-                                           	</div>
-                                     	</div>
-                                	</div>
-                                	
+                           		<h:form>                                	
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Nombre</div>
@@ -217,46 +202,16 @@
                                      	</div>
                                 	</div>
                                 	
-                                	 <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
-                                            <select class="js-select2" name="property">
-                                                <option selected="selected">Categorias</option>
-                                                <option value="">
-                                                <h:form>
-												<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
-													<h:column >
-													
-														<f:facet name="header"><i cxass="mb-4">Codigo</i></f:facet>
-														<h:outputText value="#{lis.id}" ></h:outputText>
-													</h:column>
-													<h:column >
-														<f:facet name="header"><i class="mb-4"> Nombre</i></f:facet>
-														<h:outputText value="#{lis.nombre}"></h:outputText>
-													</h:column>
-											</h:dataTable>
-										</h:form>
-										</option>
-                                                <option value="">Products</option>
-                                                <option value="">Services</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                        
-                          			<div class="form-group">
+                                	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Categoria</div>
-                                    	    <h:inputText  value="#{productoControlador.prod.categoria}" id="categoria" class="form-control-success form-control"/>
+                                    	     	<h:selectOneMenu class="form-control" value="#{productoControlador.prod.categoria}" >
+													<f:selectItem itemValue="1" itemLabel="1" />
+													<f:selectItem itemValue="2" itemLabel="2" />
+													<f:selectItem itemValue="Usuario" itemLabel="Usuario" /> 
+												</h:selectOneMenu>
                                             <div class="input-group-addon">
-                                            	<i class="fa fa-phone"></i>
-                                           	</div>
-                                     	</div>
-                                	</div>
-                                	
-                    				<div class="form-group">
-                                    	<div class="input-group">
-                                        	<div class="input-group-addon">Imagen</div>
-                                    	    <h:inputText  value="#{productoControlador.prod.urlImagen}" id="imagen" class="form-control-success form-control"/>
-                                            <div class="input-group-addon">
-                                            	<i class="fa fa-mail-reply-all"></i>
+                                            	<i class="fa fa-asterisk"></i>
                                            	</div>
                                      	</div>
                                 	</div>
@@ -271,6 +226,16 @@
                                      	</div>
                                 	</div>
                                 	
+                                	<div class="form-group">
+                                    	<div class="input-group">
+                                        	<div class="input-group-addon">Imagen</div>
+                                    	    <h:inputText  value="#{productoControlador.prod.urlImagen}" id="imagen" class="form-control-success form-control"/>
+                                            <div class="input-group-addon">
+                                            	<i class="fa fa-mail-reply-all"></i>
+                                           	</div>
+                                     	</div>
+                                	</div>
+                                	
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 										<h:commandButton  action="#{productoControlador.guardar()}" value="Guardar" class="btn btn-primary"/>
@@ -281,10 +246,10 @@
 					</div>
 				</div>
 			</div>
-			<!-- end  Registro Usuario -->
+			<!-- end  Registro Producto -->
 			
 			
-	<!-- Editar Usuario -->
+	<!-- Editar Producto -->
 			<div class="modal fade" id="editarmodal" tabindex="-1" role="dialog" aria-labelledby="editarmodal" aria-hidden="true">
 				<div class="modal-dialog modal-lg" role="document">
 					<div class="modal-content">

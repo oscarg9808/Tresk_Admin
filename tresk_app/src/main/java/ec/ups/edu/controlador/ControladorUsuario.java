@@ -10,9 +10,6 @@ import javax.inject.Inject;
 import ec.edu.ups.modelo.Usuario;
 import ec.ups.edu.DAO.UsuarioDAO;
 
-
-
-
 @ManagedBean
 @ViewScoped
 public class ControladorUsuario {
@@ -76,4 +73,7 @@ public class ControladorUsuario {
 	}
 	
 
+	public List<Usuario> totalusuarios(){
+		return usdao.totalusua();
+	}
 }

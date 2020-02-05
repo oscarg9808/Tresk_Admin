@@ -29,11 +29,7 @@ public class Direccion {
 	private String ciudad;
 	@Column (length = 10)
 	private int codpstal;
-	
-	/*@OneToMany (cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="direccion", referencedColumnName = "id")
-	private List<Factura_Cabecera> fcabecera;
-*/
+
 	public int getId() {
 		return id;
 	}

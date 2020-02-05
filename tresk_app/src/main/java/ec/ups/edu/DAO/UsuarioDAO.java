@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import ec.edu.ups.modelo.Usuario;
 
 
-
 @Stateless
 public class UsuarioDAO {
 
@@ -41,6 +40,10 @@ public class UsuarioDAO {
 	
 	public List<Usuario> getlistar() { 
 		return entitymanager.createQuery("Select u from usuario u", Usuario.class).getResultList();
+	}
+	
+	public List<Usuario> totalusua() { 
+		return entitymanager.createQuery("Select count(u from usuario u", Usuario.class).getResultList();
 	}
 	
 	public Usuario getUsuario(String contrasena, String correo) {

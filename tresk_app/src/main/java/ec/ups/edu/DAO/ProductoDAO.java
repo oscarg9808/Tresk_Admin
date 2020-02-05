@@ -36,7 +36,7 @@ public class ProductoDAO {
 	}
 
 	public List<Productos> listar() { 
-		return em.createQuery("Select u from productos u", Productos.class).getResultList();
+		return em.createQuery("Select u from productos u order by (u.id) asc", Productos.class).getResultList();
 	}
 
 	

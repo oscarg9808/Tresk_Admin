@@ -1,5 +1,6 @@
 package ec.edu.ups.modelo;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.crypto.Data;
 
 @Entity(name = "usuario")
 @Table(name = "usuario")
@@ -25,50 +29,34 @@ public class Usuario {
 	private String apellido;
 	@Column (length = 10)
 	private String telefono;
+	@Temporal(TemporalType.DATE)
+	private Date fnacimi;
 	@Column (length = 45)
 	private String correo;
 	@Column (length = 45)
 	private String contrasena;
-	private Boolean admin;
+	private String admin;
 	
 	
 	/*@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
 	@JoinColumn(name="usuarioTarjeta", referencedColumnName = "cedula")
 	private List<Tarjeta> trajeta;*/
 	
-	
-	/*@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="usuarioDireccion", referencedColumnName = "cedula")
-	private List<Direccion> direccion;*/
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
+	@JoinColumn(name="usuariodir", referencedColumnName = "cedula")
+	private List<Direccion> direccion;
 	
 	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="usuarioFactura", referencedColumnName = "cedula")
 	private List<Factura_Cabecera> factura_Cabeceras;
 	
-	/*@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
 	@JoinColumn(name="usuarioCarrito", referencedColumnName = "cedula")
-	private List<Carrito> listCarrito;*/
-
-	/*@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "usuarioId", referencedColumnName = "cedula")
-	private Carrito carrito;*/
+	private List<Carrito> listCarrito;
 	
-
-	/*public List<Factura_Cabecera> getFactura_Cabeceras() {
-		return factura_Cabeceras;
-	}*/
-
-	/*public void setFactura_Cabeceras(List<Factura_Cabecera> factura_Cabeceras) {
-		this.factura_Cabeceras = factura_Cabeceras;
-	}*/
-
-/*	public List<Carrito> getListCarrito() {
-		return listCarrito;
-	}
-
-	public void setListCarrito(List<Carrito> listCarrito) {
-		this.listCarrito = listCarrito;
-	}*/
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
+	@JoinColumn(name="usuariovoto", referencedColumnName = "cedula")
+	private List<Voto> voto;	
 
 	public String getCedula() {
 		return cedula;
@@ -102,6 +90,14 @@ public class Usuario {
 		this.telefono = telefono;
 	}
 
+	public Date getFnacimi() {
+		return fnacimi;
+	}
+
+	public void setFnacimi(Date fnacimi) {
+		this.fnacimi = fnacimi;
+	}
+
 	public String getCorreo() {
 		return correo;
 	}
@@ -118,21 +114,21 @@ public class Usuario {
 		this.contrasena = contrasena;
 	}
 
-	public Boolean getAdmin() {
+	public String getAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(Boolean admin) {
+	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
 
-/*	public List<Tarjeta> getTrajeta() {
+	/*public List<Tarjeta> getTrajeta() {
 		return trajeta;
 	}
 
 	public void setTrajeta(List<Tarjeta> trajeta) {
 		this.trajeta = trajeta;
-	}
+	}*/
 
 	public List<Direccion> getDireccion() {
 		return direccion;
@@ -141,7 +137,7 @@ public class Usuario {
 	public void setDireccion(List<Direccion> direccion) {
 		this.direccion = direccion;
 	}
-*/
+
 	public List<Factura_Cabecera> getFactura_Cabeceras() {
 		return factura_Cabeceras;
 	}
@@ -150,11 +146,21 @@ public class Usuario {
 		this.factura_Cabeceras = factura_Cabeceras;
 	}
 
-	
-	
-	/*@OneToMany
-	@JoinColumn(name="producto", referencedColumnName = "id")
-	private List<Voto> voto;*/
+	public List<Carrito> getListCarrito() {
+		return listCarrito;
+	}
+
+	public void setListCarrito(List<Carrito> listCarrito) {
+		this.listCarrito = listCarrito;
+	}
+
+	/*@Override
+	public String toString() {
+		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
+				+ ", fnacimi=" + fnacimi + ", correo=" + correo + ", contrasena=" + contrasena + ", admin=" + admin
+				+ ", trajeta=" + trajeta + ", direccion=" + direccion + ", factura_Cabeceras=" + factura_Cabeceras
+				+ ", listCarrito=" + listCarrito + "]";
+	}*/
 	
 	
 }

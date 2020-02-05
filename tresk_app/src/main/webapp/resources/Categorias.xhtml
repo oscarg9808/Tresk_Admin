@@ -76,7 +76,7 @@
                                 <i class="fa fa-home"></i>Pagina Principal</a>
                         </li>
                         <li>
-                            <a href="ProductosOO.xhtml">
+                            <a href="Productos.xhtml">
                                 <i class="fa fa-truck"></i>Productos</a>
                         </li>
                         <li>
@@ -125,10 +125,6 @@
                                       		<h:form>
 												<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
 													<h:column >
-														<f:facet name="header"><i cxass="mb-4">Codigo</i></f:facet>
-														<h:outputText value="#{lis.id}" ></h:outputText>
-													</h:column>
-													<h:column >
 														<f:facet name="header"><i class="mb-4"> Nombre</i></f:facet>
 														<h:outputText value="#{lis.nombre}"></h:outputText>
 													</h:column>
@@ -169,15 +165,6 @@
 						<div class="modal-body">
 							<p>
                            		<h:form>
-                               		<div class="form-group">
-                                    	<div class="input-group">
-                                        	<div class="input-group-addon">Codigo</div>
-                                    	    <h:inputText  value="#{categoriaControlador.cate.id}" id="id" class="form-control-success form-control"/>
-                                            <div class="input-group-addon">
-                                            	<i class="fa fa-id-card"></i>
-                                           	</div>
-                                     	</div>
-                                	</div>
                                 	
                                 	<div class="form-group">
                                     	<div class="input-group">
@@ -253,8 +240,6 @@
 				</div>
 			</div>
 			<!-- end  Editar Usuario -->
-	
-	
     </div>
 
     <!-- Jquery JS-->

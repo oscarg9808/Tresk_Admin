@@ -3,6 +3,9 @@
 		xmlns:ui="http://java.sun.com/jsf/facelets"
 		xmlns:f="http://java.sun.com/jsf/core"
 		xmlns:h="http://java.sun.com/jsf/html" 
+		xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+		xmlns:z="http://xmlns.jcp.org/jsf/core"
+		xmlns:t="http://xmlns.jcp.org/jsf/passthrough"
 		lang="en"> 
 
 <head>
@@ -14,7 +17,7 @@
     <meta name="keywords" content="au theme template"></meta>
 
     <!-- Title Page-->
-    <title>Usuarios</title>
+    <title>Usuario</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all"></link>
@@ -81,7 +84,7 @@
                         </li>
                         <li>
                             <a href="Productos.xhtml">
-                                <i class="fa fa-truck"></i>Productos</a>
+                                <i class="fa fa-truck"></i>producto</a>
                         </li>
                     </ul>
                 </nav>
@@ -97,7 +100,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                         	<div class="content">
-                         		<h3 class="pb-2 display-5">Usuarios</h3>
+                         		<h3 class="pb-2 display-5">Usuario</h3>
                          	</div>
        					</div>
                     </div>
@@ -106,7 +109,7 @@
             <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
+			<div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="col-md-12">
@@ -143,6 +146,14 @@
 													<h:column>
 														<f:facet name="header"> Correo</f:facet>
 														<h:outputText value="#{lis.correo}"></h:outputText>
+													</h:column>
+													<h:column>
+														<f:facet name="header">ROL</f:facet>
+														<h:outputText value="#{lis.admin}"></h:outputText>
+													</h:column>
+													<h:column>
+														<f:facet name="header"> Fecha N</f:facet>
+														<h:outputText value="#{lis.fnacimi}"></h:outputText>
 													</h:column>
 													<h:column class="">
 						                            	<h:commandButton action="#{controladorUsuario.eliminar(lis.cedula)}" value="Eliminar" class="btn btn-danger"/>
@@ -220,7 +231,17 @@
                                            	</div>
                                      	</div>
                                 	</div>
-                                	
+                                	<div class="form-group">
+                                    	<div class="input-group">
+                                        	<div class="input-group-addon">Fecha Nacimiento</div>
+                                    	    <h:inputText t:type="date" value="#{controladorUsuario.usu.fnacimi}" id="fnac" class="form-control-success form-control"> 
+                                    	    	<f:convertDateTime pattern="yyyy-MM-dd"/>
+                                    	    </h:inputText>
+                                            <div class="input-group-addon">
+                                            	<i class="fa fa-calendar"></i>
+                                           	</div>
+                                     	</div>
+                                	</div>
                     				<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Correo</div>
@@ -240,6 +261,19 @@
                                            	</div>
                                      	</div>
                                 	</div>
+                                	<div class="form-group">
+                                    	<div class="input-group">
+                                        	<div class="input-group-addon">ROL</div>
+                                    	     	<h:selectOneMenu class="form-control" value="#{controladorUsuario.usu.admin}" >
+													<f:selectItem itemValue="seleccione" itemLabel="seleccione" />
+													<f:selectItem itemValue="Administrador" itemLabel="Administrador" />
+													<f:selectItem itemValue="Usuario" itemLabel="Usuario" /> 
+												</h:selectOneMenu>
+                                            <div class="input-group-addon">
+                                            	<i class="fa fa-asterisk"></i>
+                                           	</div>
+                                     	</div>
+                                	</div>
                                 	
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -251,7 +285,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- end  Registro Usuario -->
+	<!-- end  Registro Usuario -->
 			
 			
 	<!-- Editar Usuario -->
@@ -315,6 +349,18 @@
                                      	</div>
                                 	</div>
                                 	
+                                	<div class="form-group">
+                                    	<div class="input-group">
+                                        	<div class="input-group-addon">Fecha Nacimiento</div>
+                                    	    <h:inputText t:type="date" value="#{controladorUsuario.usu.fnacimi}" id="fnac" class="form-control-success form-control"> 
+                                    	    	<f:convertDateTime pattern="yyyy-MM-dd"/>
+                                    	    </h:inputText>
+                                            <div class="input-group-addon">
+                                            	<i class="fa fa-calendar"></i>
+                                           	</div>
+                                     	</div>
+                                	</div>
+                                	
                     				<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Correo</div>
@@ -346,10 +392,7 @@
 				</div>
 			</div>
 			<!-- end  Editar Usuario -->
-	
-	
     </div>
-
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
