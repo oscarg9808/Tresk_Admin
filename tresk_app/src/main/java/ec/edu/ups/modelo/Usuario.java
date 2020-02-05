@@ -38,15 +38,15 @@ public class Usuario {
 	private String admin;
 	
 	
-	/*@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="usuarioTarjeta", referencedColumnName = "cedula")
-	private List<Tarjeta> trajeta;*/
+	private List<Tarjeta> tarjeta;
 	
 	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
 	@JoinColumn(name="usuariodir", referencedColumnName = "cedula")
 	private List<Direccion> direccion;
 	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
+	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
 	@JoinColumn(name="usuarioFactura", referencedColumnName = "cedula")
 	private List<Factura_Cabecera> factura_Cabeceras;
 	
@@ -122,13 +122,13 @@ public class Usuario {
 		this.admin = admin;
 	}
 
-	/*public List<Tarjeta> getTrajeta() {
-		return trajeta;
+	public List<Tarjeta> getTrajeta() {
+		return tarjeta;
 	}
 
 	public void setTrajeta(List<Tarjeta> trajeta) {
-		this.trajeta = trajeta;
-	}*/
+		this.tarjeta = trajeta;
+	}
 
 	public List<Direccion> getDireccion() {
 		return direccion;
@@ -154,13 +154,10 @@ public class Usuario {
 		this.listCarrito = listCarrito;
 	}
 
-	/*@Override
+	@Override
 	public String toString() {
 		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
 				+ ", fnacimi=" + fnacimi + ", correo=" + correo + ", contrasena=" + contrasena + ", admin=" + admin
-				+ ", trajeta=" + trajeta + ", direccion=" + direccion + ", factura_Cabeceras=" + factura_Cabeceras
-				+ ", listCarrito=" + listCarrito + "]";
-	}*/
-	
-	
+				+ "]";
+	}
 }

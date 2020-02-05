@@ -19,15 +19,14 @@ public class CategoriaControlador {
 
 		private Categorias cate;
 		public int pro;
+		public String nombre;
 		
 		@Inject 
 		private CategoriaDAO catdao;
 
 		@PostConstruct
 		private void init() {
-			cate = new Categorias();
-			//cate.addProducto(new Productos());
-			
+			cate = new Categorias();			
 		}
 
 		public Categorias getCate() {
@@ -46,6 +45,7 @@ public class CategoriaControlador {
 		public void setPro(int pro) {
 			this.pro = pro;
 		}
+		
 		
 		
 		public List<Categorias> listarCategorias(){
@@ -71,6 +71,12 @@ public class CategoriaControlador {
 			return null;
 		}
 		
+		public String Buscarnom() {
+			System.out.println(catdao.leernom(nombre));
+			this.cate=catdao.leernom(nombre);
+						
+			return null;
+		}
 		public void eliminar(int codigo) {
 			catdao.borrar(codigo);			
 		}
@@ -78,6 +84,14 @@ public class CategoriaControlador {
 		public String update() {
 			catdao.actualizar(cate);
 			return null;
+		}
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
 		}
 		
 }

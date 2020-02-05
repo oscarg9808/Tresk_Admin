@@ -110,7 +110,5 @@ public class Productos {
 					+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + ", voto=" + voto + "]";
 		}
 
-
-
 		
 }

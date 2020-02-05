@@ -12,7 +12,7 @@ import ec.ups.edu.DAO.UsuarioDAO;
 
 @ManagedBean
 @ViewScoped
-public class ControladorUsuario {
+public class UsuarioControlador {
 
 
 	private Usuario usu;

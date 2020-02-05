@@ -25,6 +25,7 @@ public class Tarjeta {
 	@Column (length = 4)
 	private int numVeri;
 	
+	
 	/*@OneToMany (cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="tarjeta", referencedColumnName = "id")
 	private List<Factura_Cabecera> fcabecera;

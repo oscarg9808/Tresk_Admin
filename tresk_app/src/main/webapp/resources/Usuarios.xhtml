@@ -126,7 +126,7 @@
                                     <table class="table table-data2">
                                         <tbody>
                                       		<h:form>
-				                            	<h:dataTable class="table table-data2" value="#{controladorUsuario.listarusuario()}" var="lis">
+				                            	<h:dataTable class="table table-data2" value="#{usuarioControlador.listarusuario()}" var="lis">
 													<h:column>
 														<f:facet name="header"> Cedula </f:facet>
 														<h:outputText value="#{lis.cedula}"></h:outputText>
@@ -156,7 +156,7 @@
 														<h:outputText value="#{lis.fnacimi}"></h:outputText>
 													</h:column>
 													<h:column class="">
-						                            	<h:commandButton action="#{controladorUsuario.eliminar(lis.cedula)}" value="Eliminar" class="btn btn-danger"/>
+						                            	<h:commandButton action="#{usuarioControlador.eliminar(lis.cedula)}" value="Eliminar" class="btn btn-danger"/>
 				                                   </h:column>
 												</h:dataTable>
 				                      		</h:form>
@@ -195,7 +195,7 @@
                                		<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Cedula</div>
-                                    	    <h:inputText  value="#{controladorUsuario.usu.cedula}" id="cedula" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{usuarioControlador.usu.cedula}" id="cedula" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-id-card"></i>
                                            	</div>
@@ -205,7 +205,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Nombre</div>
-                                    	    <h:inputText  value="#{controladorUsuario.usu.nombre}" id="nombre" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{usuarioControlador.usu.nombre}" id="nombre" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-user"></i>
                                            	</div>
@@ -215,7 +215,7 @@
                    					<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Apellido</div>
-                                    	    <h:inputText  value="#{controladorUsuario.usu.apellido}" id="apellido" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{usuarioControlador.usu.apellido}" id="apellido" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-user"></i>
                                            	</div>
@@ -225,7 +225,7 @@
                           			<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Telefono</div>
-                                    	    <h:inputText  value="#{controladorUsuario.usu.telefono}" id="telefono" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{usuarioControlador.usu.telefono}" id="telefono" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-phone"></i>
                                            	</div>
@@ -234,7 +234,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Fecha Nacimiento</div>
-                                    	    <h:inputText t:type="date" value="#{controladorUsuario.usu.fnacimi}" id="fnac" class="form-control-success form-control"> 
+                                    	    <h:inputText t:type="date" value="#{usuarioControlador.usu.fnacimi}" id="fnac" class="form-control-success form-control"> 
                                     	    	<f:convertDateTime pattern="yyyy-MM-dd"/>
                                     	    </h:inputText>
                                             <div class="input-group-addon">
@@ -245,7 +245,7 @@
                     				<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Correo</div>
-                                    	    <h:inputText  value="#{controladorUsuario.usu.correo}" id="correo" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{usuarioControlador.usu.correo}" id="correo" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-mail-reply-all"></i>
                                            	</div>
@@ -255,7 +255,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Contraseña</div>
-                                    	    <h:inputText  value="#{controladorUsuario.usu.contrasena}" id="contrasena" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{usuarioControlador.usu.contrasena}" id="contrasena" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-asterisk"></i>
                                            	</div>
@@ -264,7 +264,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">ROL</div>
-                                    	     	<h:selectOneMenu class="form-control" value="#{controladorUsuario.usu.admin}" >
+                                    	     	<h:selectOneMenu class="form-control" value="#{usuarioControlador.usu.admin}" >
 													<f:selectItem itemValue="seleccione" itemLabel="seleccione" />
 													<f:selectItem itemValue="Administrador" itemLabel="Administrador" />
 													<f:selectItem itemValue="Usuario" itemLabel="Usuario" /> 
@@ -277,7 +277,7 @@
                                 	
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-										<h:commandButton  action="#{controladorUsuario.guardar()}" value="Guardar" class="btn btn-primary"/>
+										<h:commandButton  action="#{usuarioControlador.guardar()}" value="Guardar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 							</p>
@@ -301,8 +301,8 @@
 						<h:form>
 							<div class="form-group">
 								<div class="input-group">
-				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Usuarios" value="#{controladorUsuario.cedula}" id="usuc" />
-				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{controladorUsuario.Buscar()}" value="Buscar">
+				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Usuarios" value="#{usuarioControlador.cedula}" id="usuc" />
+				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{usuarioControlador.Buscar()}" value="Buscar">
 				        			</h:commandButton>
 				        		</div>
 				        	</div>
@@ -312,7 +312,7 @@
                                		<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Cedula</div>
-                                    	   	<h:inputText value="#{controladorUsuario.usu.cedula}" id="cedula" class="form-control-success form-control"/>
+                                    	   	<h:inputText value="#{usuarioControlador.usu.cedula}" id="cedula" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-id-card"></i>
                                            	</div>
@@ -322,7 +322,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Nombre</div>
-                                    	    <h:inputText value="#{controladorUsuario.usu.nombre}" id="nombre" class="form-control-success form-control"/>
+                                    	    <h:inputText value="#{usuarioControlador.usu.nombre}" id="nombre" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-user"></i>
                                            	</div>
@@ -332,7 +332,7 @@
                    					<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Apellido</div>
-                                    	    <h:inputText value="#{controladorUsuario.usu.apellido}" id="apellido" class="form-control-success form-control"/>
+                                    	    <h:inputText value="#{usuarioControlador.usu.apellido}" id="apellido" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-user"></i>
                                            	</div>
@@ -342,7 +342,7 @@
                           			<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Telefono</div>
-                                    	    <h:inputText value="#{controladorUsuario.usu.telefono}" id="telefono" class="form-control-success form-control"/>
+                                    	    <h:inputText value="#{usuarioControlador.usu.telefono}" id="telefono" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-phone"></i>
                                            	</div>
@@ -352,7 +352,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Fecha Nacimiento</div>
-                                    	    <h:inputText t:type="date" value="#{controladorUsuario.usu.fnacimi}" id="fnac" class="form-control-success form-control"> 
+                                    	    <h:inputText t:type="date" value="#{usuarioControlador.usu.fnacimi}" id="fnac" class="form-control-success form-control"> 
                                     	    	<f:convertDateTime pattern="yyyy-MM-dd"/>
                                     	    </h:inputText>
                                             <div class="input-group-addon">
@@ -364,7 +364,7 @@
                     				<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Correo</div>
-                                    	   <h:inputText value="#{controladorUsuario.usu.correo}" id="correo" class="form-control-success form-control"/>
+                                    	   <h:inputText value="#{usuarioControlador.usu.correo}" id="correo" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-mail-reply-all"></i>
                                            	</div>
@@ -374,7 +374,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Contraseña</div>
-                                    	    <h:inputText value="#{controladorUsuario.usu.contrasena}" id="contra"  class="form-control-success form-control"/>
+                                    	    <h:inputText value="#{usuarioControlador.usu.contrasena}" id="contra"  class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-asterisk"></i>
                                            	</div>
@@ -383,7 +383,7 @@
                                 	
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-										<h:commandButton action="#{controladorUsuario.update()}" value="Actualizar" class="btn btn-primary"/>
+										<h:commandButton action="#{usuarioControlador.update()}" value="Actualizar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 							</p>

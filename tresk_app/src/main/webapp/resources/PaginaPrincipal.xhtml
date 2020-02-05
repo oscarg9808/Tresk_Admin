@@ -167,7 +167,9 @@
                                             <h:form>
                                             	<h2><h:outputText value="#{controladorUsuario.listarusuario().size()}" /></h2>
                                             </h:form>
-                                                <span>Clientes</span>
+                                             <h3 class="badge badge-secondary">
+                                                CLIENTES
+                                            </h3>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -187,7 +189,9 @@
                                            	<h:form>
                                             	<h2><h:outputText value="#{productoControlador.resporteDeProductos().get(0).nombre}" /></h2>
                                             </h:form>
-                                                <span><p>Producto mas Vendido</p></span>
+                                            <h3 class="badge badge-secondary">
+                                                MAS VENDIDO
+                                            </h3>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -201,13 +205,15 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-calendar-note"></i>
+                                                <i class="zmdi zmdi-headset-mic"></i>
                                             </div>
                                             <div class="text">
                                             <h:form>
-                                            	<h2><h:outputText value="#{categoriaControlador.listarCategorias().size()}" /></h2>
+                                            	<h2><h:outputText value="#{productoControlador.resporteDeProductos().size()}" /></h2>
                                             </h:form>
-                                                <span>Categorias</span>
+                                              <h3 class="badge badge-secondary">
+                                                PRODUCTOS
+                                            </h3>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -221,11 +227,12 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-money"></i>
+                                                <i class="zmdi zmdi-star"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>Facturas</span>
+                                             <h3 class="badge badge-secondary">
+                                                MAS VOTADO
+                                            </h3>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -247,7 +254,7 @@
 										<h:outputText value="#{lis.nombre}"></h:outputText>
 									</h:column>
 									<h:column>
-										<f:facet name="header"> Cantidad </f:facet>
+										<f:facet name="header">Vendidos</f:facet>
 										<h:outputText value="#{lis.cantidad}"></h:outputText>
 									</h:column>
 								</h:dataTable>

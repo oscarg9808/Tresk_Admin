@@ -124,6 +124,15 @@
                                         <tbody>
                                       		<h:form>
 												<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
+													<h:column>
+													
+													</h:column>
+													
+													<h:column>
+													
+													</h:column>
+													
+													
 													<h:column >
 														<f:facet name="header"><i class="mb-4"> Nombre</i></f:facet>
 														<h:outputText value="#{lis.nombre}"></h:outputText>
@@ -201,8 +210,8 @@
 						<h:form>
 							<div class="form-group">
 								<div class="input-group">
-				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Categoria" value="#{categoriaControlador.pro}" id="cont" />
-				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{categoriaControlador.Buscar()}" value="Buscar">
+				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Categoria" value="#{categoriaControlador.nombre}" id="cont" />
+				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{categoriaControlador.Buscarnom()}" value="Buscar">
 				        			</h:commandButton>
 				        		</div>
 				        	</div>
@@ -212,7 +221,7 @@
                                		<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Codigo</div>
-                                    	   	<h:inputText value="#{categoriaControlador.cate.id}" id="cedula" class="form-control-success form-control" />
+                                    	   	<h:inputText  value="#{categoriaControlador.cate.id}" id="cedula" class="form-control-success form-control" />
                                             <div class="input-group-addon">
                                             	<i class="fa fa-id-card"></i>
                                            	</div>

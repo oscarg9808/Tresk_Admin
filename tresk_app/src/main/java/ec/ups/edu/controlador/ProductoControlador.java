@@ -24,6 +24,7 @@ public class ProductoControlador {
 
 		private Productos prod;
 		public int p;
+		public String nombre;
 		
 		@Inject 
 		private ProductoDAO pdao;
@@ -35,6 +36,8 @@ public class ProductoControlador {
 			prod = new Productos();
 			
 		}
+		
+		
 
 		public int getP() {
 			return p;
@@ -63,7 +66,7 @@ public class ProductoControlador {
 		
 
 		public String guardar() {
-			System.out.println(prod);
+			System.out.println("*********************************"+prod);
 			pdao.insertar(prod);
 			return null;
 		}	
@@ -75,6 +78,12 @@ public class ProductoControlador {
 			return null;
 		}
 		
+		public String Buscarnom() {
+			System.out.println(pdao.leernom(nombre));
+			this.prod=pdao.leernom(nombre);
+						
+			return null;
+		}
 		public void eliminar(int codigo) {
 			pdao.borrar(codigo);			
 		}
@@ -126,6 +135,18 @@ public class ProductoControlador {
 			
 			return estadisticasLista;
 
+		}
+
+
+
+		public String getNombre() {
+			return nombre;
+		}
+
+
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
 		}
 		
 
