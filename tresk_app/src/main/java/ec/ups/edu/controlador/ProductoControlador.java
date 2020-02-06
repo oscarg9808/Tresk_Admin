@@ -105,7 +105,7 @@ public class ProductoControlador {
 				canitdad =0;
 				for (Factura_Detalle factura_Detalle2 : detallesList) {
 					
-					if(productos.getId()==factura_Detalle2.getId()) {
+					if(productos.getId()==factura_Detalle2.getProductos().getId()) {
 						canitdad =canitdad+factura_Detalle2.getCantidad();
 					}
 					

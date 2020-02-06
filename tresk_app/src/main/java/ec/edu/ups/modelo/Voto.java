@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -22,6 +24,7 @@ public class Voto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(length = 10)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(length = 100)
 	private int numvoto;

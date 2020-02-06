@@ -29,6 +29,10 @@ public class Factura_Detalle implements Serializable {
 	@Column (length = 25)
 	private int cantidad;
 	private double p_total;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "productoid", referencedColumnName = "id")
+	private Productos productos;
 
 	public int getId() {
 		return id;
@@ -53,11 +57,22 @@ public class Factura_Detalle implements Serializable {
 	public void setP_total(double p_total) {
 		this.p_total = p_total;
 	}
+	
+
+	public Productos getProductos() {
+		return productos;
+	}
+
+	public void setProductos(Productos productos) {
+		this.productos = productos;
+	}
 
 	@Override
 	public String toString() {
-		return "Factura_Detalle [id=" + id + ", cantidad=" + cantidad + ", p_total=" + p_total + "]";
+		return "Factura_Detalle [id=" + id + ", cantidad=" + cantidad + ", p_total=" + p_total + ", productos="
+				+ productos + "]";
 	}
+	
 	
 
 }

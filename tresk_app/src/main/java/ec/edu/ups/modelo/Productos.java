@@ -18,9 +18,6 @@ import javax.persistence.Table;
 @Table(name = "productos")
 public class Productos implements Serializable {
 
-		/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 		@Id 
 		@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,9 +28,9 @@ public class Productos implements Serializable {
 		private String urlImagen;
 		private int categoria;
 		
-		@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+		/*@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 		@JoinColumn(name="productoDetalle", referencedColumnName = "id")
-		private List<Factura_Detalle> listaFacturadetalle ;
+		private List<Factura_Detalle> listaFacturadetalle;*/
 		
 		@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 		@JoinColumn(name="productoCarrito", referencedColumnName = "id")
