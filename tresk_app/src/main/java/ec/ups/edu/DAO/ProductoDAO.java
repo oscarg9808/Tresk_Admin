@@ -42,8 +42,8 @@ public class ProductoDAO {
 		TypedQuery<Productos> produ =  em.createQuery("SELECT c FROM productos c WHERE c.nombre = :nombre", Productos.class);
 		System.out.println(produ.setParameter("nombre", nombre).getSingleResult());
 		return produ.setParameter("nombre", nombre).getSingleResult();
-		
-	}
+		}
+	
 	public List<Productos> listar() { 
 		return em.createQuery("Select u from productos u order by (u.id) asc", Productos.class).getResultList();
 	}

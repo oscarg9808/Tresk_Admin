@@ -28,7 +28,7 @@ public class Tarjeta {
 	
 	/*@OneToMany (cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="tarjeta", referencedColumnName = "id")
-	private List<Factura_Cabecera> fcabecera;
+	private List<Factura_Cabecera> fcabecera;*/
 	
 	public int getId() {
 		return id;
@@ -58,5 +58,5 @@ public class Tarjeta {
 	@Override
 	public String toString() {
 		return "Tarjeta [id=" + id + ", numero=" + numero + ", fechaV=" + fechaV + ", numVeri=" + numVeri + "]";
-	}		*/
+	}		
 }

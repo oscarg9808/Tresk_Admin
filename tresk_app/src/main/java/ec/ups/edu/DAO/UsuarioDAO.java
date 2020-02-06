@@ -43,7 +43,7 @@ public class UsuarioDAO {
 	}
 	
 	public List<Usuario> totalusua() { 
-		return entitymanager.createQuery("Select count(u from usuario u", Usuario.class).getResultList();
+		return entitymanager.createQuery("Select count(u from usuario u)", Usuario.class).getResultList();
 	}
 	
 	public Usuario getUsuario(String contrasena, String correo) {

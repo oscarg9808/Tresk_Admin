@@ -1,4 +1,4 @@
-package ec.ups.edu.servicioUsados;
+package ec.ups.edu.servicios;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ import ec.ups.edu.controlador.ProductoControlador;
 
 
 @Path("/tienda")
-public class CatergoriaService {
+public class ServiciosTodos {
 
 	@Inject
 	private CategoriaControlador cc;
@@ -123,7 +123,6 @@ public class CatergoriaService {
 	}
 	
 	
-	
 	@GET
 	@Path("/realizarPago")
 	@Consumes("application/json")
@@ -134,11 +133,6 @@ public class CatergoriaService {
 		
 		return true;
 	}
-	
-	
-	
-	
-	
 	
 	@GET
 	@Path("/facturaCabeceraList")

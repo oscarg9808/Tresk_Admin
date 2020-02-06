@@ -1,7 +1,5 @@
 package ec.edu.ups.modelo;
 
-
-
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -107,8 +105,7 @@ public class Productos {
 		@Override
 		public String toString() {
 			return "Productos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio_uni="
-					+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + ", voto=" + voto + "]";
+					+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + "]";
 		}
-
 		
 }
