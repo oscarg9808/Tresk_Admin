@@ -24,7 +24,7 @@ import ec.ups.edu.controlador.ProductoControlador;
 
 
 
-@Path("/tienda")
+@Path("/Tresk")
 public class ServiciosTodos {
 
 	@Inject
