@@ -69,11 +69,21 @@ public class UsuarioControlador {
 	}
 
 	public List<Usuario> listarusuario(){
-		return usdao.getlistar();
+		try {
+			return usdao.getlistar();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 
 	public List<Usuario> totalusuarios(){
-		return usdao.totalusua();
+		try {
+			return usdao.listar();
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
 	}
 }

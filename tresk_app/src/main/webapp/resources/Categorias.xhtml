@@ -5,7 +5,7 @@
 		xmlns:h="http://java.sun.com/jsf/html" 
 		lang="en"> 
 
-<head>
+<h:head>
     <!-- Required meta tags-->
     <meta charset="UTF-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
@@ -37,7 +37,7 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all"></link>
 
-</head>
+</h:head>
 
 <body class="animsition">
     <div class="page-wrapper">
@@ -212,6 +212,7 @@
 								<div class="input-group">
 				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Categoria" value="#{categoriaControlador.nombre}" id="cont" />
 				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{categoriaControlador.Buscarnom()}" value="Buscar">
+				        				<f:ajax execute="cont" render=" codigo nombre"/>
 				        			</h:commandButton>
 				        		</div>
 				        	</div>
@@ -221,7 +222,7 @@
                                		<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Codigo</div>
-                                    	   	<h:inputText  value="#{categoriaControlador.cate.id}" id="cedula" class="form-control-success form-control" />
+                                    	   	<h:inputText  value="#{categoriaControlador.cate.id}" id="codigo" class="form-control-success form-control" />
                                             <div class="input-group-addon">
                                             	<i class="fa fa-id-card"></i>
                                            	</div>

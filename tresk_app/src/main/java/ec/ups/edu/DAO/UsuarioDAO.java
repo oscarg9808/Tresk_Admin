@@ -38,14 +38,17 @@ public class UsuarioDAO {
 		return entitymanager.find(Usuario.class, cedu);
 	}
 	
-	public List<Usuario> getlistar() { 
+	public List<Usuario> getlistar() throws Exception{ 
 		return entitymanager.createQuery("Select u from usuario u", Usuario.class).getResultList();
 	}
 	
-	public List<Usuario> totalusua() { 
-		return entitymanager.createQuery("Select count(u from usuario u)", Usuario.class).getResultList();
+	public List<Usuario> listar() throws Exception {
+		String jpql = "Select u from usuario u";
+		Query query = entitymanager.createQuery(jpql,Usuario.class);
+		List<Usuario> clientes = query.getResultList();
+		return clientes;
 	}
-	
+		
 	public Usuario getUsuario(String contrasena, String correo) {
 		
 		 Query query1 = entitymanager.createQuery("Select u from usuario u where contrasena='"+contrasena+

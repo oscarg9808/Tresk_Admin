@@ -1,4 +1,5 @@
 package ec.edu.ups.modelo;
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,8 +15,12 @@ import javax.persistence.Table;
 
 @Entity(name = "facturacabecera")
 @Table(name = "facturacabecera")
-public class Factura_Cabecera {
+public class Factura_Cabecera implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (length = 10)
 	private int id;

@@ -9,8 +9,6 @@ import ec.edu.ups.modelo.Usuario;
 import ec.ups.edu.DAO.UsuarioDAO;
 
 
-
-
 @Stateless
 public class UsuarioON {
 	
@@ -25,9 +23,25 @@ public class UsuarioON {
 	}
 	
 	public List<Usuario> getUsuarioList(){
-		return usuarioDAO.getlistar();
+		try {
+			return usuarioDAO.getlistar();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 	
+	
+	public List<Usuario> totalusuarios(){
+		try {
+			return usuarioDAO.getlistar();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
 	
 	public Usuario getUsuarioLogin(String contrasena, String correo) {
 		return usuarioDAO.getUsuario(contrasena, correo);

@@ -1,8 +1,14 @@
 package ec.edu.ups.modelo;
 
-public class Estadisticas implements Comparable<Estadisticas> {
+import java.io.Serializable;
+
+public class Estadisticas implements Comparable<Estadisticas>, Serializable {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private int cantidad;
 	private int idProducto;

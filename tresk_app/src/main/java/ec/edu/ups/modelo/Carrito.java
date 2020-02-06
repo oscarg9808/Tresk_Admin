@@ -2,6 +2,7 @@ package ec.edu.ups.modelo;
 
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,8 +16,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "carrito")
-public class Carrito {
+public class Carrito implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(length = 10)
 	private int id;

@@ -1,5 +1,6 @@
 package ec.edu.ups.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -18,8 +19,12 @@ import javax.xml.crypto.Data;
 
 @Entity(name = "usuario")
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column (length = 10)
 	private String cedula;
