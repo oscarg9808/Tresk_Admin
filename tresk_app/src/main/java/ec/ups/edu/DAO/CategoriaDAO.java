@@ -9,11 +9,12 @@ import javax.inject.Inject;
 import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.swing.text.AsyncBoxView;
 
 import ec.edu.ups.modelo.Categorias;
 
 @Stateless
-public class CategoriaDAO {
+public class CategoriaDAO{
 	
 	@Inject
 	private EntityManager em;

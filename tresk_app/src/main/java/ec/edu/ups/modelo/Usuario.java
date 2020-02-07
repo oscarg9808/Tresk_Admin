@@ -29,7 +29,6 @@ public class Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column (length = 10)
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String cedula;
 	@Column (length = 25)
 	private String nombre;

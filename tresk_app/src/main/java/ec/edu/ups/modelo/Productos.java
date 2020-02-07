@@ -27,6 +27,7 @@ public class Productos implements Serializable {
 		private double precio_uni;
 		private String urlImagen;
 		private int categoria;
+		private int stock;
 		
 		/*@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 		@JoinColumn(name="productoDetalle", referencedColumnName = "id")
@@ -104,10 +105,20 @@ public class Productos implements Serializable {
 			this.categoria = categorias;
 		}
 
+
+		public int getStock() {
+			return stock;
+		}
+
+		public void setStock(int stock) {
+			this.stock = stock;
+		}
+
 		@Override
 		public String toString() {
 			return "Productos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio_uni="
-					+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + "]";
+					+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + ", stock=" + stock + "]";
 		}
+		
 		
 }
