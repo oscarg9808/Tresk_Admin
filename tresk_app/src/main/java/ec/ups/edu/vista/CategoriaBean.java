@@ -10,7 +10,7 @@ import javax.inject.Inject;
 
 import ec.edu.ups.modelo.Categorias;
 import ec.edu.ups.modelo.Productos;
-import ec.ups.edu.DAO.CategoriaDAO;
+import ec.ups.edu.datos.CategoriaDAO;
 
 
 @ManagedBean

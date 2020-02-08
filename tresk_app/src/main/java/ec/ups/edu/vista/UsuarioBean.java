@@ -13,8 +13,8 @@ import ec.edu.ups.modelo.Carrito;
 import ec.edu.ups.modelo.Direccion;
 import ec.edu.ups.modelo.Tarjeta;
 import ec.edu.ups.modelo.Usuario;
-import ec.ups.edu.DAO.UsuarioDAO;
-import ec.ups.edu.ON.UsuarioON;
+import ec.ups.edu.datos.UsuarioDAO;
+import ec.ups.edu.negocio.UsuarioON;
 
 @ManagedBean
 @SessionScoped

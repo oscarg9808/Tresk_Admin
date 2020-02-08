@@ -1,4 +1,4 @@
-package ec.ups.edu.ON;
+package ec.ups.edu.negocio;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,10 +13,10 @@ import ec.edu.ups.modelo.Factura_Cabecera;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
 import ec.edu.ups.modelo.Usuario;
-import ec.ups.edu.DAO.CarritoDAO;
-import ec.ups.edu.DAO.FacturaDAO;
-import ec.ups.edu.DAO.ProductoDAO;
-import ec.ups.edu.DAO.UsuarioDAO;
+import ec.ups.edu.datos.CarritoDAO;
+import ec.ups.edu.datos.FacturaDAO;
+import ec.ups.edu.datos.ProductoDAO;
+import ec.ups.edu.datos.UsuarioDAO;
 
 
 @Stateless

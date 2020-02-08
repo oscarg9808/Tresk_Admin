@@ -1,4 +1,4 @@
-package ec.ups.edu.ON;
+package ec.ups.edu.negocio;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import ec.edu.ups.modelo.Usuario;
-import ec.ups.edu.DAO.UsuarioDAO;
+import ec.ups.edu.datos.UsuarioDAO;
 
 
 @Stateless

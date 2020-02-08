@@ -1,4 +1,4 @@
-package ec.ups.edu.ON;
+package ec.ups.edu.negocio;
 
 import java.util.List;
 
@@ -8,13 +8,13 @@ import javax.inject.Inject;
 
 import ec.edu.ups.modelo.Categorias;
 import ec.edu.ups.modelo.Productos;
-import ec.ups.edu.DAO.CategoriaDAO;
-import ec.ups.edu.DAO.ProductoDAO;
+import ec.ups.edu.datos.CategoriaDAO;
+import ec.ups.edu.datos.ProductoDAO;
 
 
 
 @Stateless
-public class CategoriasOn {
+public class CategoriasON {
 
 	
 	@Inject
@@ -39,7 +39,7 @@ public class CategoriasOn {
 	}
 	
 	public static void main(String arg []) {
-		CategoriasOn c = new CategoriasOn();
+		CategoriasON c = new CategoriasON();
 		System.out.println(c.getCategoriasL());
 	}
 	

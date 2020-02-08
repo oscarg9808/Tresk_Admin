@@ -14,8 +14,8 @@ import javax.inject.Inject;
 import ec.edu.ups.modelo.Estadisticas;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
-import ec.ups.edu.DAO.FacturaDetalleDAO;
-import ec.ups.edu.DAO.ProductoDAO;
+import ec.ups.edu.datos.FacturaDetalleDAO;
+import ec.ups.edu.datos.ProductoDAO;
 
 
 @ManagedBean

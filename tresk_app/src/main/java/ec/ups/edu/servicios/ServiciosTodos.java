@@ -16,9 +16,9 @@ import ec.edu.ups.modelo.Factura_Cabecera;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
 import ec.edu.ups.modelo.Usuario;
-import ec.ups.edu.ON.CategoriasOn;
-import ec.ups.edu.ON.FacturaON;
-import ec.ups.edu.ON.UsuarioON;
+import ec.ups.edu.negocio.CategoriasON;
+import ec.ups.edu.negocio.FacturaON;
+import ec.ups.edu.negocio.UsuarioON;
 import ec.ups.edu.vista.CategoriaBean;
 import ec.ups.edu.vista.ProductoBean;
 
@@ -32,7 +32,7 @@ public class ServiciosTodos {
 	@Inject
 	private ProductoBean pc;
 	@Inject
-	private CategoriasOn ca;
+	private CategoriasON ca;
 	@Inject
 	private UsuarioON usuarioON;
 	@Inject
