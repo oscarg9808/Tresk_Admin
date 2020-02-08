@@ -59,6 +59,8 @@ public class Usuario implements Serializable{
 	@Column (length = 45)
 	private String correo;
 	@Column (length = 45)
+	private String usuariolog;
+	@Column (length = 45)
 	private String contrasena;
 	private String admin;
 	
@@ -179,10 +181,20 @@ public class Usuario implements Serializable{
 		this.listCarrito = listCarrito;
 	}
 
+	public String getUsuariolog() {
+		return usuariolog;
+	}
+
+	public void setUsuariolog(String usuariolog) {
+		this.usuariolog = usuariolog;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", fnacimi=" + fnacimi + ", correo=" + correo + ", contrasena=" + contrasena + ", admin=" + admin
-				+ "]";
+				+ ", fnacimi=" + fnacimi + ", correo=" + correo + ", usuariolog=" + usuariolog + ", contrasena="
+				+ contrasena + ", admin=" + admin + ", tarjeta=" + tarjeta + ", direccion=" + direccion + "]";
 	}
+
+
 }
