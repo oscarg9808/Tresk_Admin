@@ -1,4 +1,4 @@
-package ec.ups.edu.controlador;
+package ec.ups.edu.vista;
 
 import java.util.List;
 

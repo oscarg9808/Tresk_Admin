@@ -19,8 +19,8 @@ import ec.edu.ups.modelo.Usuario;
 import ec.ups.edu.ON.CategoriasOn;
 import ec.ups.edu.ON.FacturaON;
 import ec.ups.edu.ON.UsuarioON;
-import ec.ups.edu.controlador.CategoriaBean;
-import ec.ups.edu.controlador.ProductoBean;
+import ec.ups.edu.vista.CategoriaBean;
+import ec.ups.edu.vista.ProductoBean;
 
 
 
