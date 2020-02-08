@@ -28,8 +28,8 @@ public class UsuarioDAO {
 		
 	}
 	
-	public String borrar(String ced) {
-		entitymanager.remove(leer(ced));
+	public String borrar(String cedu) {
+		entitymanager.remove(leer(cedu));
 		return null;
 	}
 	
@@ -49,10 +49,9 @@ public class UsuarioDAO {
 		return clientes;
 	}
 		
-	public Usuario getUsuario(String contrasena, String correo) {
-		
-		 Query query1 = entitymanager.createQuery("Select u from usuario u where contrasena='"+contrasena+
-				 "' and correo='"+correo+"'");
+	public Usuario login(String usuariolog, String contra) {
+		 Query query1 = entitymanager.createQuery("Select u from usuario u where usuariolog='"+usuariolog+
+				 "' and contrasena='"+contra+"'");
 	      try{
 	    	  Usuario result = (Usuario) query1.getSingleResult(); 
 	    	  return result;

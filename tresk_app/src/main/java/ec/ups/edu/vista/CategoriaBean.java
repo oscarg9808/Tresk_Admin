@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 import ec.edu.ups.modelo.Categorias;
 import ec.edu.ups.modelo.Productos;
+import ec.edu.ups.negociointerface.Tresklocal;
 import ec.ups.edu.datos.CategoriaDAO;
 
 
@@ -21,9 +22,9 @@ public class CategoriaBean {
 		public int pro;
 		public String nombre;
 		
-		@Inject 
-		private CategoriaDAO catdao;
-
+		@Inject
+		private Tresklocal tresk;
+		
 		@PostConstruct
 		private void init() {
 			cate = new Categorias();			
@@ -49,7 +50,7 @@ public class CategoriaBean {
 		
 		
 		public List<Categorias> listarCategorias(){
-			return this.catdao.listar();
+			return tresk.getCategoriasL();
 		}
 		
 		public String addProductos() {
@@ -60,11 +61,11 @@ public class CategoriaBean {
 
 		public String guardar() {
 			System.out.println(cate);
-			catdao.insertar(cate);
+			tresk.guardarcat(cate);
 			return null;
 		}	
 		
-		public String Buscar() {
+		/*public String Buscar() {
 			System.out.println(catdao.leer(pro));
 			this.cate=catdao.leer(pro);
 						
@@ -76,16 +77,17 @@ public class CategoriaBean {
 			this.cate=catdao.leernom(nombre);
 						
 			return null;
-		}
+		}*/
+		
 		public void eliminar(int codigo) {
-			catdao.borrar(codigo);			
+			tresk.delete(codigo);		
 		}
 		
-		public String update() {
+		/*public String update() {
 			catdao.actualizar(cate);
 			return null;
 		}
-
+*/
 		public String getNombre() {
 			return nombre;
 		}

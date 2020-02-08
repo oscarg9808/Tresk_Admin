@@ -16,48 +16,35 @@ import ec.edu.ups.modelo.Factura_Cabecera;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
 import ec.edu.ups.modelo.Usuario;
-import ec.ups.edu.negocio.CategoriasON;
-import ec.ups.edu.negocio.FacturaON;
-import ec.ups.edu.negocio.UsuarioON;
-import ec.ups.edu.vista.CategoriaBean;
-import ec.ups.edu.vista.ProductoBean;
-
+import ec.edu.ups.negociointerface.Tresklocal;
 
 
 @Path("/Tresk")
 public class ServiciosTodos {
 
 	@Inject
-	private CategoriaBean cc;
-	@Inject
-	private ProductoBean pc;
-	@Inject
-	private CategoriasON ca;
-	@Inject
-	private UsuarioON usuarioON;
-	@Inject
-	private FacturaON facturaON;
+	private Tresklocal tresk;
 	
 	
 	@GET
 	@Path("/categorias")
 	@Produces("application/json")
 	public List<Categorias> getCategorias(){
-		return ca.getCategoriasL(); 
+		return tresk.getCategoriasL(); 
 	}
 	
 	@GET
 	@Path("/productosLis")
 	@Produces("application/json")
 	public List<Productos> getProductos(){
-		return pc.listarP();
+		return tresk.getProductos();
 	}
 	
 	@GET
 	@Path("/carritoLista")
 	@Produces("application/json")
 	public List<Carrito> geCarritos(){
-		return facturaON.getListaCarrito();
+		return tresk.getListaCarrito();
 	}
 	
 	
@@ -68,7 +55,7 @@ public class ServiciosTodos {
 	public Productos  producto(Productos p) {
 		Productos pr = new Productos();
 		try {
-			pr = ca.getProducto(p.getId());
+			pr = tresk.getProducto(p.getId());
 			return pr;
 		}catch (Exception e) {
 			System.out.println("error en curso");
@@ -81,7 +68,7 @@ public class ServiciosTodos {
 	@Consumes("application/json")
 	@Produces("application/json")
 	public boolean insertUsuario(Usuario usuario) {
-	 usuarioON.CrearUsuario(usuario);
+	 tresk.CrearUsuario(usuario);
 		
 		return true;
 	}
@@ -93,7 +80,7 @@ public class ServiciosTodos {
 	@Produces("application/json")
 	public boolean insertFactura(Factura_Cabecera factura_Cabecera) {
 
-		facturaON.insertFacturaCabecera(factura_Cabecera);
+			tresk.insertFacturaCabecera(factura_Cabecera);
 		
 		return true;
 	}
@@ -105,7 +92,7 @@ public class ServiciosTodos {
 	@Produces("application/json")
 	public boolean insertFacturaCabecera(@QueryParam("cedula") String cedula ,Factura_Cabecera factura_Cabecera) {
 
-		facturaON.insertarFacturaCabecera(cedula,factura_Cabecera);
+		tresk.insertarFacturaCabecera(cedula,factura_Cabecera);
 		
 		return true;
 	}
@@ -117,7 +104,7 @@ public class ServiciosTodos {
 	@Produces("application/json")
 	public boolean insertFacturaDetalle(@QueryParam("cedula") String cedula,@QueryParam("id") int id ,Factura_Detalle factura_Detalle) {
 
-		facturaON.insertarFacturaDetalle(cedula,id,factura_Detalle);
+		tresk.insertarFacturaDetalle(cedula,id,factura_Detalle);
 		
 		return true;
 	}
@@ -129,7 +116,7 @@ public class ServiciosTodos {
 	@Produces("application/json")
 	public boolean realizarPago(@QueryParam("cedula") String cedula) {
 
-		facturaON.realizarPago(cedula);
+		tresk.realizarPago(cedula);
 		
 		return true;
 	}
@@ -138,50 +125,50 @@ public class ServiciosTodos {
 	@Path("/facturaCabeceraList")
 	@Produces("application/json")
 	public List<Factura_Cabecera> factura_Cabeceras(){
-		return facturaON.getfactura_Cabeceras();
+		return tresk.getfactura_Cabeceras();
 	}
 	
 	@GET
 	@Path("/facturaDetalleList")
 	@Produces("application/json")
 	public List<Factura_Detalle> getfactura_Detalle(){
-		return facturaON.getfactura_Detalle();
+		return tresk.getfactura_Detalle();
 	}
 	
 	@GET
 	@Path("/usuarioListar")
 	@Produces("application/json")
 	public List<Usuario> listUsuario(){
-		return usuarioON.getUsuarioList();
+		return tresk.getUsuarioList();
 	}
 	
 	@GET
 	@Path("/usuarioLogin")
 	@Produces("application/json")
 	public Usuario getUsuarioLogin(@QueryParam("contrasena") String contrasena,@QueryParam("correo") String correo){
-		return usuarioON.getUsuarioLogin(contrasena, correo);
+		return tresk.getUsuarioLogin(contrasena, correo);
 	}
 	
 	@GET
 	@Path("/getidFactura")
 	@Produces("application/json")
 	public int getIdfacturaCa(){
-		return facturaON.numeroFacruraId();
+		return tresk.numeroFacruraId();
 	}
 	
 	@GET
 	@Path("/getidFacturaDetalle")
 	@Produces("application/json")
 	public int getIdfacturaDetalle(){
-		facturaON.resporteDeProductos();
-		return facturaON.numeroFacruradetId();
+		tresk.resporteDeProductos();
+		return tresk.numeroFacruradetId();
 	}
 	
 	@GET
 	@Path("/elimimarDetalleBase")
 	@Produces("application/json")
 	public boolean elimarDetalle(@QueryParam("facdetalle") int facdetalle){
-		facturaON.borrarFacturaDetalle(facdetalle);
+		tresk.borrarFacturaDetalle(facdetalle);
 		return true;
 	}
 	
@@ -191,7 +178,7 @@ public class ServiciosTodos {
 	@Path("/usuarioFacturas")
 	@Produces("application/json")
 	public int  getUsuarFactura(@QueryParam("cedula") String contrasena){
-		return facturaON.getidFacturaCabecera(contrasena);
+		return tresk.getidFacturaCabecera(contrasena);
 	}
 		
 		

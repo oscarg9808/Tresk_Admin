@@ -14,143 +14,120 @@ import javax.inject.Inject;
 import ec.edu.ups.modelo.Estadisticas;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
+import ec.edu.ups.negociointerface.Tresklocal;
 import ec.ups.edu.datos.FacturaDetalleDAO;
 import ec.ups.edu.datos.ProductoDAO;
-
 
 @ManagedBean
 @SessionScoped
 public class ProductoBean {
 
-		private Productos prod;
-		public int p;
-		public String nombre;
-		
-		@Inject 
-		private ProductoDAO pdao;
-		@Inject
-		private FacturaDetalleDAO facturaDetalleDAO;
+	private Productos prod;
+	public int p;
+	public String nombre;
 
-		@PostConstruct
-		private void init() {
-			prod = new Productos();
-			
-		}
-		
-		
+	@Inject
+	private Tresklocal tresk;
 
-		public int getP() {
-			return p;
-		}
+	@PostConstruct
+	private void init() {
+		prod = new Productos();
 
-		public void setP(int p) {
-			this.p = p;
-		}
-		
+	}
 
-		public Productos getProd() {
-			return prod;
-		}
+	public int getP() {
+		return p;
+	}
 
+	public void setP(int p) {
+		this.p = p;
+	}
 
+	public Productos getProd() {
+		return prod;
+	}
 
-		public void setProd(Productos prod) {
-			this.prod = prod;
-		}
-		
-		
-		public List<Productos> listarP(){
-			
-			return this.pdao.listar();
-		}
-		
+	public void setProd(Productos prod) {
+		this.prod = prod;
+	}
 
-		public String guardar() {
-			System.out.println("*********************************"+prod);
-			pdao.insertar(prod);
-			return null;
-		}	
-		
-		public String Buscar() {
-			System.out.println(pdao.leer(p));
-			this.prod=pdao.leer(p);
-						
-			return null;
-		}
-		
-		public String Buscarnom() {
-			System.out.println(pdao.leernom(nombre));
-			this.prod=pdao.leernom(nombre);
-						
-			return null;
-		}
-		public void eliminar(int codigo) {
-			pdao.borrar(codigo);			
-		}
-		
-		public String update() {
-			pdao.actualizar(prod);;
-			return null;
-		}
+	public List<Productos> listarProductos() {
+		return tresk.getProductos();
+	}
 
-		public List<Estadisticas> resporteDeProductos() {
-			List<Productos> productosLisT = pdao.listar();
-			List<Factura_Detalle> detallesList = facturaDetalleDAO.getlistar();
-			List<Estadisticas> estadisticasLista = new ArrayList<Estadisticas>();
-			Estadisticas estadisticas;
-			int canitdad=0;
+	public String guardar() {
+		tresk.nuevoprod(prod);
+		return null;
+	}
 
-			for (Productos productos : productosLisT) {
-				estadisticas = new Estadisticas();
-				canitdad =0;
-				for (Factura_Detalle factura_Detalle2 : detallesList) {
-					
-					if(productos.getId()==factura_Detalle2.getProductos().getId()) {
-						canitdad =canitdad+factura_Detalle2.getCantidad();
-					}
-					
+	/*public String Buscar() {
+		System.out.println(pdao.leer(p));
+		this.prod = pdao.leer(p);
+
+		return null;
+	}
+
+	public String Buscarnom() {
+		System.out.println(pdao.leernom(nombre));
+		this.prod = pdao.leernom(nombre);
+
+		return null;
+	}*/
+
+	public void eliminar(int codigo) {
+		tresk.eliminar(codigo);
+	}
+
+	public String update() {
+		tresk.actualizar(prod);
+		return null;
+	}
+
+	public List<Estadisticas> resporteDeProductos() {
+		List<Productos> productosLisT = tresk.listarp();
+		List<Factura_Detalle> detallesList = tresk.factlist();
+		List<Estadisticas> estadisticasLista = new ArrayList<Estadisticas>();
+		Estadisticas estadisticas;
+		int canitdad = 0;
+
+		for (Productos productos : productosLisT) {
+			estadisticas = new Estadisticas();
+			canitdad = 0;
+			for (Factura_Detalle factura_Detalle2 : detallesList) {
+
+				if (productos.getId() == factura_Detalle2.getProductos().getId()) {
+					canitdad = canitdad + factura_Detalle2.getCantidad();
 				}
-				estadisticas.setCantidad(canitdad);
-				estadisticas.setIdProducto(productos.getId());
-				estadisticas.setNombre(productos.getNombre());
-				estadisticasLista.add(estadisticas);
+
 			}
-			
-			
-			Collections.sort(estadisticasLista, new Comparator<Estadisticas>(){
-	            @Override
-	            public int compare(Estadisticas o1, Estadisticas o2) {
-	                return o2.getCantidad() - (o1.getCantidad());
-	            }
+			estadisticas.setCantidad(canitdad);
+			estadisticas.setIdProducto(productos.getId());
+			estadisticas.setNombre(productos.getNombre());
+			estadisticasLista.add(estadisticas);
+		}
 
-				
-				
-	        });
-			
-			for (Estadisticas estadisticas2 : estadisticasLista) {
-				System.out.println(estadisticas2.toString());
+		Collections.sort(estadisticasLista, new Comparator<Estadisticas>() {
+			@Override
+			public int compare(Estadisticas o1, Estadisticas o2) {
+				return o2.getCantidad() - (o1.getCantidad());
 			}
-			
-			
-			
-			return estadisticasLista;
 
+		});
+
+		for (Estadisticas estadisticas2 : estadisticasLista) {
+			System.out.println(estadisticas2.toString());
 		}
 
+		return estadisticasLista;
 
+	}
 
-		public String getNombre() {
-			return nombre;
-		}
+	public String getNombre() {
+		return nombre;
+	}
 
-
-
-		public void setNombre(String nombre) {
-			this.nombre = nombre;
-		}
-		
-
-
-
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
 }

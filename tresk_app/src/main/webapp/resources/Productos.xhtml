@@ -126,7 +126,7 @@
                                     <table class="table table-borderless table-data3">
                                         <tbody>
                                       		<h:form>
-				                            	<h:dataTable class="table table-data2" value="#{productoBean.listarP()}" var="prod">
+				                            	<h:dataTable class="table table-data2" value="#{productoBean.listarProductos()}" var="prod">
 													<h:column>
 														<f:facet name="header"> Nombre</f:facet>
 														<h:outputText value="#{prod.nombre}"></h:outputText>
@@ -216,7 +216,7 @@
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Categoria</div>
                                     	     	<h:selectOneMenu class="form-control" value="#{productoBean.prod.categoria}" >
-													<f:selectItems value="#{categoriaControlador.listarCategorias()}" var="categoria" itemValue="#{categoria.id}" itemLabel="#{categoria.nombre}"  />
+													<f:selectItems value="#{categoriaBean.listarCategorias()}" var="categoria" itemValue="#{categoria.id}" itemLabel="#{categoria.nombre}"  />
 												</h:selectOneMenu>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-asterisk"></i>

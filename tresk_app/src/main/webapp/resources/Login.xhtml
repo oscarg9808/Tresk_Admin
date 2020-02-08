@@ -36,16 +36,16 @@
 					<span class="login100-form-title p-t-20 p-b-45">
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
-						<h:inputText  value="#{usuarioControlador.usu.correo}" class="input100" />
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Usuario obligatorio">
+						<h:inputText  value="#{usuarioBean.usu.usuariolog}" class="input100" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
-						<h:inputSecret value="#{usuarioControlador.usu.contrasena}" class="input100" />
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Contrasena obligatoria">
+						<h:inputSecret value="#{usuarioBean.usu.contrasena}" class="input100" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock"></i>
@@ -53,7 +53,7 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-10">
-						<h:commandButton value="login"  class="login100-form-btn" action="#{usuarioControlador.login(usuarioControlador.usu.correo,usuarioControlador.usu.contrasena)}"></h:commandButton>
+						<h:commandButton value="login"  class="login100-form-btn" action="#{usuarioBean.login(usuarioBean.usu.usuariolog,usuarioBean.usu.contrasena)}"></h:commandButton>
 					</div>
 
 					<div class="text-center w-full p-t-25 p-b-230">

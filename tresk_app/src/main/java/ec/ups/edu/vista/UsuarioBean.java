@@ -13,22 +13,19 @@ import ec.edu.ups.modelo.Carrito;
 import ec.edu.ups.modelo.Direccion;
 import ec.edu.ups.modelo.Tarjeta;
 import ec.edu.ups.modelo.Usuario;
-import ec.ups.edu.datos.UsuarioDAO;
-import ec.ups.edu.negocio.UsuarioON;
+import ec.edu.ups.negociointerface.Tresklocal;
 
 @ManagedBean
 @SessionScoped
 public class UsuarioBean {
 
-
 	private Usuario usu;
 	public String cedula;
 	private Usuario usuarioLogin;
+
 	@Inject
-	private UsuarioON usuarioON;
-	
-	@Inject 
-	private UsuarioDAO usdao;
+	private Tresklocal tresklocal;
+
 
 	@PostConstruct
 	private void init() {
@@ -40,11 +37,10 @@ public class UsuarioBean {
 		return usu;
 	}
 
-
 	public void setUsu(Usuario usu) {
 		this.usu = usu;
 	}
-	
+
 	public String getCedula() {
 		return cedula;
 	}
@@ -53,74 +49,78 @@ public class UsuarioBean {
 		this.cedula = cedula;
 	}
 
-	
-	public String guardar() {
-		System.out.println(usu);
-		usdao.insertar(usu);
+	public String NuevoUsuario() {
+		tresklocal.CrearUsuario(usu);
+		limpiar();
 		return null;
 	}
 
-	
 	public String Buscar() {
-		System.out.println(usdao.leer(cedula));
-		this.usu=usdao.leer(this.cedula);	
+		tresklocal.BuscarUsuario(cedula);
 		return null;
 	}
-		
-	
-	public String eliminar(String cedula) {
-		usdao.borrar(cedula);	
+
+	public String eliminar(String cedu) {
+		tresklocal.eliminar(cedu);
 		return null;
 	}
-	
+
 	public String update() {
-		usdao.actualizar(usu);;
+		tresklocal.update();
 		return null;
 	}
 
-	public List<Usuario> listarusuario(){
-		try {
-			return usdao.getlistar();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-
-	public List<Usuario> totalusuarios(){
-		try {
-			return usdao.listar();
-		} catch (Exception e) {
-			System.out.println(e);
-			return null;
-		}
-	}
-	
-	
-	
-	public String login(String correo, String contrasenia) {
-		 System.out.println("correo: "+correo+"  contra: "+contrasenia);
-		this.usuarioLogin = usuarioON.getUsuarioLogin(correo,contrasenia);
-		System.out.println("usuariologin encontrado "+usuarioLogin);
-		if(this.usuarioLogin != null) {
-			if(usuarioLogin.getAdmin().equalsIgnoreCase("Administrador")) {
-				return "PaginaPrincipal.xhtml";
-				}else {
-					this.usuarioLogin.setAdmin("");
-					this.usuarioLogin.setApellido("");
-					this.usuarioLogin.setCedula("");
-					this.usuarioLogin.setContrasena("");
-					this.usuarioLogin.setCorreo("");
-					this.usuarioLogin.setDireccion(new ArrayList<Direccion>());
-					this.usuarioLogin.setFnacimi(new Date());
-					this.usuarioLogin.setListCarrito(new ArrayList<Carrito>());
-					this.usuarioLogin.setNombre("");
-					this.usuarioLogin.setTelefono("");
-					this.usuarioLogin.setTrajeta(new ArrayList<Tarjeta>());
-				}
-		}
+	public List<Usuario> listarusuario() {
+		return tresklocal.getUsuarioList();
 		
+	}
+
+	public List<Usuario> totalusuarios() {
+		tresklocal.totalusuarios();
+		return null;
+	}
+
+	public String login(String usuariolog, String contrasenia) {
+		System.out.println("usuario: " + usuariolog + "  contra: " + contrasenia);
+		this.usuarioLogin = tresklocal.getUsuarioLogin(usuariolog, contrasenia);
+		System.out.println("usuariologin encontrado " + usuarioLogin);
+		if (this.usuarioLogin != null) {
+			if (usuarioLogin.getAdmin().equalsIgnoreCase("administrador")) {
+				return "PaginaPrincipal.xhtml";
+			} else {
+				this.usuarioLogin.setAdmin("");
+				this.usuarioLogin.setApellido("");
+				this.usuarioLogin.setCedula("");
+				this.usuarioLogin.setContrasena("");
+				this.usuarioLogin.setUsuariolog("");
+				this.usuarioLogin.setCorreo("");
+				this.usuarioLogin.setDireccion(new ArrayList<Direccion>());
+				this.usuarioLogin.setFnacimi(new Date());
+				this.usuarioLogin.setListCarrito(new ArrayList<Carrito>());
+				this.usuarioLogin.setNombre("");
+				this.usuarioLogin.setTelefono("");
+				this.usuarioLogin.setTrajeta(new ArrayList<Tarjeta>());
+			}
+		}
+
+		return "Login.xhtml";
+	}
+	
+	public String logout() {
+
+		this.usuarioLogin.setAdmin("");
+		this.usuarioLogin.setApellido("");
+		this.usuarioLogin.setCedula("");
+		this.usuarioLogin.setContrasena("");
+		this.usuarioLogin.setUsuariolog("");
+		this.usuarioLogin.setCorreo("");
+		this.usuarioLogin.setDireccion(new ArrayList<Direccion>());
+		this.usuarioLogin.setFnacimi(new Date());
+		this.usuarioLogin.setListCarrito(new ArrayList<Carrito>());
+		this.usuarioLogin.setNombre("");
+		this.usuarioLogin.setTelefono("");
+		this.usuarioLogin.setTrajeta(new ArrayList<Tarjeta>());
+
 		return "Login.xhtml";
 	}
 
@@ -132,28 +132,30 @@ public class UsuarioBean {
 		this.usuarioLogin = usuarioLogin;
 	}
 
-	public UsuarioON getUsuarioON() {
-		return usuarioON;
+	public Tresklocal getTresklocal() {
+		return tresklocal;
 	}
 
-	public void setUsuarioON(UsuarioON usuarioON) {
-		this.usuarioON = usuarioON;
+	public void setTresklocal(Tresklocal tresklocal) {
+		this.tresklocal = tresklocal;
 	}
 	
-	public String logout() {
-		
-		this.usuarioLogin.setAdmin("");
-		this.usuarioLogin.setApellido("");
-		this.usuarioLogin.setCedula("");
-		this.usuarioLogin.setContrasena("");
-		this.usuarioLogin.setCorreo("");
-		this.usuarioLogin.setDireccion(new ArrayList<Direccion>());
-		this.usuarioLogin.setFnacimi(new Date());
-		this.usuarioLogin.setListCarrito(new ArrayList<Carrito>());
-		this.usuarioLogin.setNombre("");
-		this.usuarioLogin.setTelefono("");
-		this.usuarioLogin.setTrajeta(new ArrayList<Tarjeta>());
-		
-		return "Login.xhtml";
+	public String limpiar() {
+
+		this.usu.setAdmin("");
+		this.usu.setApellido("");
+		this.usu.setCedula("");
+		this.usu.setContrasena("");
+		this.usu.setUsuariolog("");
+		this.usu.setCorreo("");
+		this.usu.setDireccion(new ArrayList<Direccion>());
+		this.usu.setFnacimi(new Date());
+		this.usu.setListCarrito(new ArrayList<Carrito>());
+		this.usu.setNombre("");
+		this.usu.setTelefono("");
+		this.usu.setTrajeta(new ArrayList<Tarjeta>());
+
+		return "Usuarios.xhtl";
 	}
+	
 }

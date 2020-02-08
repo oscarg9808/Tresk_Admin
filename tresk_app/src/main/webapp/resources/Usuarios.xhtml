@@ -279,7 +279,7 @@
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar
 										</button>
-										<h:commandButton  action="#{usuarioBean.guardar()}" value="Guardar" class="btn btn-primary"/>
+										<h:commandButton  action="#{usuarioBean.NuevoUsuario()}" value="Guardar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 							</p>
@@ -385,8 +385,8 @@
                                         	<div class="input-group-addon">ROL</div>
                                     	     	<h:selectOneMenu class="form-control" value="#{usuarioBean.usu.admin}" id="rol" >
 													<f:selectItem itemValue="seleccione" itemLabel="seleccione" />
-													<f:selectItem itemValue="Administrador" itemLabel="Administrador" />
-													<f:selectItem itemValue="Usuario" itemLabel="Usuario" /> 
+													<f:selectItem itemValue="Administrador" itemLabel="administrador" />
+													<f:selectItem itemValue="Usuario" itemLabel="usuario" /> 
 												</h:selectOneMenu>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-asterisk"></i>
