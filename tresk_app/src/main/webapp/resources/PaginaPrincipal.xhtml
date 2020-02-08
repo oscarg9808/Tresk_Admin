@@ -115,7 +115,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Bienvenido #{usuarioControlador.usuarioLogin.nombre.toUpperCase()}</a>
+                                                        <a href="#">Bienvenido #{usuarioBean.usuarioLogin.nombre.toUpperCase()}</a>
                                                     </h5>
                                                     <span class="email">Admin@example.com</span>	
                                                 </div>
@@ -135,7 +135,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#{usuarioControlador.logout()}">
+                                                <a href="#{usuarioBean.logout()}">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
@@ -166,7 +166,7 @@
                                             </div>
                                             <div class="text">
                                             <h:form>
-                                            	<h2><h:outputText value="#{usuarioControlador.listarusuario().size()}" /></h2>
+                                            	<h2><h:outputText value="#{usuarioBean.listarusuario().size()}" /></h2>
                                             </h:form>
                                              <h3 class="badge badge-secondary">
                                                 CLIENTES
@@ -188,7 +188,7 @@
                                             </div>
                                             <div class="text">
                                            	<h:form>
-                                            	<h2><h:outputText value="#{productoControlador.resporteDeProductos().get(0).nombre}" /></h2>
+                                            	<h2><h:outputText value="#{productoBean.resporteDeProductos().get(0).nombre}" /></h2>
                                             </h:form>
                                             <h3 class="badge badge-secondary">
                                                 MAS VENDIDO
@@ -210,7 +210,7 @@
                                             </div>
                                             <div class="text">
                                             <h:form>
-                                            	<h2><h:outputText value="#{productoControlador.resporteDeProductos().size()}" /></h2>
+                                            	<h2><h:outputText value="#{productoBean.resporteDeProductos().size()}" /></h2>
                                             </h:form>
                                               <h3 class="badge badge-secondary">
                                                 PRODUCTOS
@@ -249,7 +249,7 @@
                            		<h3 class="title-2">Reporte de Ventas</h3>
                             </div>
                             <h:form>
-                            	<h:dataTable class="table table-data2" value="#{productoControlador.resporteDeProductos()}" var="lis">
+                            	<h:dataTable class="table table-data2" value="#{productoBean.resporteDeProductos()}" var="lis">
 									<h:column>
 										<f:facet name="header"> Nombre</f:facet>
 										<h:outputText value="#{lis.nombre}"></h:outputText>

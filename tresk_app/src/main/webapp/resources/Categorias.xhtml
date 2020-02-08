@@ -124,7 +124,7 @@
                                     <table class="table table-data2">
                                         <tbody>
                                       		<h:form>
-												<h:dataTable class="table table-data2" value="#{categoriaControlador.listarCategorias()}" var="lis" id="lis">
+												<h:dataTable class="table table-data2" value="#{categoriaBean.listarCategorias()}" var="lis" id="lis">
 													<h:column>
 													
 													</h:column>
@@ -139,7 +139,7 @@
 														<h:outputText value="#{lis.nombre}"></h:outputText>
 													</h:column>
                                 					<h:column>
-														<h:commandButton action="#{categoriaControlador.eliminar(lis.id)}" value="Eliminar" class="btn btn-danger" />
+														<h:commandButton action="#{categoriaBeanr.eliminar(lis.id)}" value="Eliminar" class="btn btn-danger" />
 													</h:column>
 													<h:column>
 														<a href="ProductosIndividual.xhtml">
@@ -184,7 +184,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Nombre</div>
-                                    	    <h:inputText  value="#{categoriaControlador.cate.nombre}" id="nombre" class="form-control-success form-control"/>
+                                    	    <h:inputText  value="#{categoriaBeanr.cate.nombre}" id="nombre" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-user"></i>
                                            	</div>
@@ -192,7 +192,7 @@
                                 	</div>                                	
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-										<h:commandButton  action="#{categoriaControlador.guardar()}" value="Guardar" class="btn btn-primary"/>
+										<h:commandButton  action="#{categoriaBeanr.guardar()}" value="Guardar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 							</p>
@@ -216,8 +216,8 @@
 						<h:form>
 							<div class="form-group">
 								<div class="input-group">
-				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Categoria" value="#{categoriaControlador.nombre}" id="cont" />
-				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{categoriaControlador.Buscarnom()}" value="Buscar">
+				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Categoria" value="#{categoriaBeanr.nombre}" id="cont" />
+				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{categoriaBeanr.Buscarnom()}" value="Buscar">
 				        				<f:ajax execute="cont" render=" codigo nombre"/>
 				        			</h:commandButton>
 				        		</div>
@@ -225,7 +225,7 @@
                                		<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Codigo</div>
-                                    	   	<h:inputText  value="#{categoriaControlador.cate.id}" id="codigo" class="form-control-success form-control" />
+                                    	   	<h:inputText  value="#{categoriaBeanr.cate.id}" id="codigo" class="form-control-success form-control" />
                                             <div class="input-group-addon">
                                             	<i class="fa fa-id-card"></i>
                                            	</div>
@@ -235,7 +235,7 @@
                                 	<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Nombre</div>
-                                    	    <h:inputText value="#{categoriaControlador.cate.nombre}" id="nombre" class="form-control-success form-control"/>
+                                    	    <h:inputText value="#{categoriaBeanr.cate.nombre}" id="nombre" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-user"></i>
                                            	</div>
@@ -244,7 +244,7 @@
                                 	
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-										<h:commandButton action="#{categoriaControlador.update()}" value="Actualizar" class="btn btn-primary"/>
+										<h:commandButton action="#{categoriaBeanr.update()}" value="Actualizar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 						</div>
