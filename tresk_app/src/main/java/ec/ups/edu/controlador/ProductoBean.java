@@ -20,7 +20,7 @@ import ec.ups.edu.DAO.ProductoDAO;
 
 @ManagedBean
 @SessionScoped
-public class ProductoControlador {
+public class ProductoBean {
 
 		private Productos prod;
 		public int p;

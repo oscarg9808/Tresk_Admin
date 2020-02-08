@@ -18,7 +18,7 @@ import ec.ups.edu.ON.UsuarioON;
 
 @ManagedBean
 @SessionScoped
-public class UsuarioControlador {
+public class UsuarioBean {
 
 
 	private Usuario usu;

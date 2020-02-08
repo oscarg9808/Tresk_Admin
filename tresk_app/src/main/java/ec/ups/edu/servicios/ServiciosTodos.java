@@ -19,8 +19,8 @@ import ec.edu.ups.modelo.Usuario;
 import ec.ups.edu.ON.CategoriasOn;
 import ec.ups.edu.ON.FacturaON;
 import ec.ups.edu.ON.UsuarioON;
-import ec.ups.edu.controlador.CategoriaControlador;
-import ec.ups.edu.controlador.ProductoControlador;
+import ec.ups.edu.controlador.CategoriaBean;
+import ec.ups.edu.controlador.ProductoBean;
 
 
 
@@ -28,9 +28,9 @@ import ec.ups.edu.controlador.ProductoControlador;
 public class ServiciosTodos {
 
 	@Inject
-	private CategoriaControlador cc;
+	private CategoriaBean cc;
 	@Inject
-	private ProductoControlador pc;
+	private ProductoBean pc;
 	@Inject
 	private CategoriasOn ca;
 	@Inject
