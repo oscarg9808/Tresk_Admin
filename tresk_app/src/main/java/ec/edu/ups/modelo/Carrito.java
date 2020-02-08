@@ -1,7 +1,4 @@
 package ec.edu.ups.modelo;
-
-
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,13 +13,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/*
+ * @(#)Carrito.java 08/01/20
+ * 
+ * Copyright 2020 1.0.0 UPS.
+ * Proyecto Final APP DIST. Aprendizaje.
+ */
+
+/**
+ * Esta clase hace referencia a la entidaddel carrito de compras
+ * para usarlo en la tienda virtual.
+ *
+ * @author Oscar Pizarro
+ * @author Jose Atariguano
+ * @version 1.0.0 08/01/20
+ * @since 1.4 REVISARRR.......................
+ */
+
 @Entity
 @Table(name = "carrito")
 public class Carrito implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(length = 10)

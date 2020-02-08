@@ -14,6 +14,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/*
+ * @(#)Producto.java 08/01/20
+ * 
+ * Copyright 2020 1.0.0 UPS.
+ * Proyecto Final APP DIST. Aprendizaje.
+ */
+
+/**
+ * Esta clase hace referencia a la entidad Producto
+ * para usarlo en la tienda virtual.
+ *
+ * @author Oscar Pizarro
+ * @author Jose Atariguano
+ * @version 1.0.0 08/01/20
+ * @since 1.4 REVISARRR.......................
+ */
+
 @Entity(name = "productos")
 @Table(name = "productos")
 public class Productos implements Serializable {

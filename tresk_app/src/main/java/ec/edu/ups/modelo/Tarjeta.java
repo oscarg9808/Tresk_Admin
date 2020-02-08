@@ -14,6 +14,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/*
+ * @(#)Tarjeta.java 08/01/20
+ * 
+ * Copyright 2020 1.0.0 UPS.
+ * Proyecto Final APP DIST. Aprendizaje.
+ */
+
+/**
+ * Esta clase hace referencia a la entidad Tarjeta
+ * para el pago de una compra.
+ *
+ * @author Oscar Pizarro
+ * @author Jose Atariguano
+ * @version 1.0.0 08/01/20
+ * @since 1.4 REVISARRR.......................
+ */
+
+
 @Entity(name = "tarjeta")
 @Table(name = "tarjeta")
 public class Tarjeta implements Serializable{

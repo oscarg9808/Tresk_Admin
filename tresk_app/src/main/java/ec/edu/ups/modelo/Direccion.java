@@ -15,6 +15,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/*
+ * @(#)Direccion.java 08/01/20
+ * 
+ * Copyright 2020 1.0.0 UPS.
+ * Proyecto Final APP DIST. Aprendizaje.
+ */
+
+/**
+ * Esta clase hace referencia a la entidad direccion del usuario
+ * para usarlo en la tienda virtual.
+ *
+ * @author Oscar Pizarro
+ * @author Jose Atariguano
+ * @version 1.0.0 08/01/20
+ * @since 1.4 REVISARRR.......................
+ */
+
 @Entity(name = "direccion")
 @Table(name = "direccion")
 public class Direccion implements Serializable{

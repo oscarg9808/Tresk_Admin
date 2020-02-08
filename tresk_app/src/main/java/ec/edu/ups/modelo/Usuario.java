@@ -19,6 +19,24 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.crypto.Data;
 
+/*
+ * @(#)Usuario.java 08/01/20
+ * 
+ * Copyright 2020 1.0.0 UPS.
+ * Proyecto Final APP DIST. Aprendizaje.
+ */
+
+/**
+ * Esta clase hace referencia a la entidad Usuario
+ * para uso de la tienda virtual.
+ *
+ * @author Oscar Pizarro
+ * @author Jose Atariguano
+ * @version 1.0.0 08/01/20
+ * @since 1.4 REVISARRR.......................
+ */
+
+
 @Entity(name = "usuario")
 @Table(name = "usuario")
 public class Usuario implements Serializable{

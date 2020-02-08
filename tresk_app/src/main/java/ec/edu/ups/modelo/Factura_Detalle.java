@@ -15,6 +15,23 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/*
+ * @(#)Factura_Detalle.java 08/01/20
+ * 
+ * Copyright 2020 1.0.0 UPS.
+ * Proyecto Final APP DIST. Aprendizaje.
+ */
+
+/**
+ * Esta clase hace referencia a la entidad Factura_Detalle
+ * hace referencia a la compra que se realizara
+ *
+ * @author Oscar Pizarro
+ * @author Jose Atariguano
+ * @version 1.0.0 08/01/20
+ * @since 1.4 REVISARRR.......................
+ */
+
 @Entity(name = "facturadetalle")
 @Table(name = "facturadetalle")
 public class Factura_Detalle implements Serializable {
