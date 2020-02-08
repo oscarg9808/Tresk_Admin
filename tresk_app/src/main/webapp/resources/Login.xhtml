@@ -4,7 +4,7 @@
 		xmlns:f="http://java.sun.com/jsf/core"
 		xmlns:h="http://java.sun.com/jsf/html" 
 		lang="en"> 
-<head>
+<h:head>
 	<title>Login</title>
 	<meta charset="UTF-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
@@ -26,18 +26,18 @@
 	<link rel="stylesheet" type="text/css" href="Login/css/util.css"></link>
 	<link rel="stylesheet" type="text/css" href="Login/css/main.css"></link>
 <!--===============================================================================================-->
-</head>
+</h:head>
 <body>
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('Login/images/fondolog.jpg');">
 			<div class="wrap-login100 p-t-190 p-b-30">
-				<form class="login100-form validate-form">
+				<h:form class="login100-form validate-form">
 						<img src="images/icon/Tresklogo.png" alt="AVATAR"  width="400" height="200" ></img>
 					<span class="login100-form-title p-t-20 p-b-45">
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
-						<h:inputSecret value="Password" class="input100" />
+						<h:inputText  value="#{usuarioControlador.usu.correo}" class="input100" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user"></i>
@@ -45,7 +45,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
-						<h:inputSecret value="Password" class="input100" />
+						<h:inputSecret value="#{usuarioControlador.usu.contrasena}" class="input100" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock"></i>
@@ -53,7 +53,7 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-10">
-						<h:commandButton value="login"  class="login100-form-btn"></h:commandButton>
+						<h:commandButton value="login"  class="login100-form-btn" action="#{usuarioControlador.login(usuarioControlador.usu.correo,usuarioControlador.usu.contrasena)}"></h:commandButton>
 					</div>
 
 					<div class="text-center w-full p-t-25 p-b-230">
@@ -61,22 +61,19 @@
 							Page only admins
 						</a>
 					</div>
-				</form>
+				</h:form>
 			</div>
 		</div>
 	</div>
-	
-	
-
-	!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->	
+	<script src="Login/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="Login/vendor/bootstrap/js/popper.js"></script>
+	<script src="Login/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="Login/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="Login/js/main.js"></script>
 
 </body>
 </html>

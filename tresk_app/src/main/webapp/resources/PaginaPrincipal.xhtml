@@ -115,7 +115,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Administrador</a>
+                                                        <a href="#">Bienvenido #{usuarioControlador.usuarioLogin.nombre.toUpperCase()}</a>
                                                     </h5>
                                                     <span class="email">Admin@example.com</span>	
                                                 </div>
@@ -135,7 +135,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="#{usuarioControlador.logout()}">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>

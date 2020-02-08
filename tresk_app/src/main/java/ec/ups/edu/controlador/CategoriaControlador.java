@@ -14,7 +14,7 @@ import ec.ups.edu.DAO.CategoriaDAO;
 
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class CategoriaControlador {
 
 		private Categorias cate;

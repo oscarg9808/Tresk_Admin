@@ -53,10 +53,15 @@ public class UsuarioDAO {
 		
 		 Query query1 = entitymanager.createQuery("Select u from usuario u where contrasena='"+contrasena+
 				 "' and correo='"+correo+"'");
-	      Usuario result = (Usuario) query1.getSingleResult();
-	      System.out.println("Max Employee Salary :" + result);
+	      try{
+	    	  Usuario result = (Usuario) query1.getSingleResult(); 
+	    	  return result;
+	      }catch(Exception e) {
+	    	  
+	      }
 	      
-	      return result;
+	      
+	      return null;
 	}
 	
 

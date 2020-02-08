@@ -1,22 +1,31 @@
 package ec.ups.edu.controlador;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
+import ec.edu.ups.modelo.Carrito;
+import ec.edu.ups.modelo.Direccion;
+import ec.edu.ups.modelo.Tarjeta;
 import ec.edu.ups.modelo.Usuario;
 import ec.ups.edu.DAO.UsuarioDAO;
+import ec.ups.edu.ON.UsuarioON;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class UsuarioControlador {
 
 
 	private Usuario usu;
 	public String cedula;
+	private Usuario usuarioLogin;
+	@Inject
+	private UsuarioON usuarioON;
 	
 	@Inject 
 	private UsuarioDAO usdao;
@@ -24,6 +33,7 @@ public class UsuarioControlador {
 	@PostConstruct
 	private void init() {
 		usu = new Usuario();
+		usuarioLogin = new Usuario();
 	}
 
 	public Usuario getUsu() {
@@ -85,5 +95,65 @@ public class UsuarioControlador {
 			System.out.println(e);
 			return null;
 		}
+	}
+	
+	
+	
+	public String login(String correo, String contrasenia) {
+		 System.out.println("correo: "+correo+"  contra: "+contrasenia);
+		this.usuarioLogin = usuarioON.getUsuarioLogin(correo,contrasenia);
+		System.out.println("usuariologin encontrado "+usuarioLogin);
+		if(this.usuarioLogin != null) {
+			if(usuarioLogin.getAdmin().equalsIgnoreCase("Administrador")) {
+				return "PaginaPrincipal.xhtml";
+				}else {
+					this.usuarioLogin.setAdmin("");
+					this.usuarioLogin.setApellido("");
+					this.usuarioLogin.setCedula("");
+					this.usuarioLogin.setContrasena("");
+					this.usuarioLogin.setCorreo("");
+					this.usuarioLogin.setDireccion(new ArrayList<Direccion>());
+					this.usuarioLogin.setFnacimi(new Date());
+					this.usuarioLogin.setListCarrito(new ArrayList<Carrito>());
+					this.usuarioLogin.setNombre("");
+					this.usuarioLogin.setTelefono("");
+					this.usuarioLogin.setTrajeta(new ArrayList<Tarjeta>());
+				}
+		}
+		
+		return "Login.xhtml";
+	}
+
+	public Usuario getUsuarioLogin() {
+		return usuarioLogin;
+	}
+
+	public void setUsuarioLogin(Usuario usuarioLogin) {
+		this.usuarioLogin = usuarioLogin;
+	}
+
+	public UsuarioON getUsuarioON() {
+		return usuarioON;
+	}
+
+	public void setUsuarioON(UsuarioON usuarioON) {
+		this.usuarioON = usuarioON;
+	}
+	
+	public String logout() {
+		
+		this.usuarioLogin.setAdmin("");
+		this.usuarioLogin.setApellido("");
+		this.usuarioLogin.setCedula("");
+		this.usuarioLogin.setContrasena("");
+		this.usuarioLogin.setCorreo("");
+		this.usuarioLogin.setDireccion(new ArrayList<Direccion>());
+		this.usuarioLogin.setFnacimi(new Date());
+		this.usuarioLogin.setListCarrito(new ArrayList<Carrito>());
+		this.usuarioLogin.setNombre("");
+		this.usuarioLogin.setTelefono("");
+		this.usuarioLogin.setTrajeta(new ArrayList<Tarjeta>());
+		
+		return "Login.xhtml";
 	}
 }
