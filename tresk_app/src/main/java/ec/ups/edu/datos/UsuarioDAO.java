@@ -18,22 +18,38 @@ public class UsuarioDAO {
 	
 	private Usuario us;
 	
-	
+	/**
+	 * Metodo que inserta un usuario en la base de datos 
+	 * @param c es el el parametro que se insertara en la base de datos 
+	 */
 	public void insertar(Usuario c) {
 		entitymanager.persist(c);
 	}  
+	/**
+	 * Metodo que actualkiza la Entidad Usuario en la Base de datos
+	 * @param c es le paramtreo que contine los datos a se actualizados en la base de datos 
+	 */
 	
 	public void actualizar(Usuario c) {
 		entitymanager.merge(c);
 		
 	}
+	/**
+	 *  Metedo que elimima un usuario en la base de datos 
+	 * @param cedu contiene el atributo primario con el que se hace la busqueda de eliminacion
+	 * @return valor nulo
+	 */
 	
 	public String borrar(String cedu) {
 		entitymanager.remove(leer(cedu));
 		return null;
 	}
 	
-	
+	/**
+	 * Metodo que busca una entidad usuario dentro del  base de datos
+	 * @param cedu paramtro que contine la clave primaria con la que se realiza la busqueda 
+	 * @return retorna el objeto buscado dentro de la base de datos Usuario
+	 */
 	public Usuario leer(String cedu) {
 		System.out.println("Buscar usuario DAO............");
 		System.out.println(" "+entitymanager.find(Usuario.class, cedu));
@@ -41,7 +57,10 @@ public class UsuarioDAO {
 		
 	}
 	
-	
+	/**
+	 * Metodo que lista los usuarios dentro de la base de datos
+	 * @return una lista con los usuarios que se encunetran en la base de datos
+	 */
 	public List<Usuario> getlistar(){ 
 		return entitymanager.createQuery("Select u from usuario u", Usuario.class).getResultList();
 	}

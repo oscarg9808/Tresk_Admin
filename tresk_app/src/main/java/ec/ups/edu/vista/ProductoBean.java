@@ -38,35 +38,35 @@ public class ProductoBean {
 	}
 /**
  * 
- * @return
+ * @return obtine la ip del producto
  */
 	public int getP() {
 		return p;
 	}
 /**
  * 
- * @param p
+ * @param p toma el valor p para ser asiganada a la variable p del modelo producto
  */
 	public void setP(int p) {
 		this.p = p;
 	}
 /**
  * 
- * @return
+ * @return obtiene el objetos productos del modelo Productos 
  */
 	public Productos getProd() {
 		return prod;
 	}
 /**
  * 
- * @param prod
+ * @param prod toma el paramtro prod para ser asignada 
  */
 	public void setProd(Productos prod) {
 		this.prod = prod;
 	}
 /**
  * 
- * @return
+ * @return obtiene una lista de productos almacenados en la base 
  */
 	public List<Productos> listarProductos() {
 		limpiar();
@@ -74,7 +74,7 @@ public class ProductoBean {
 	}
 /**
  * 
- * @return
+ * @return retorna una variable de asiganacion del modelo
  */
 	public String guardar() {
 		tresk.nuevoprod(prod);
@@ -82,8 +82,8 @@ public class ProductoBean {
 	}
 /**
  * 
- * @param nombre
- * @return
+ * @param nombre paramatro con el que se realizara la busqueda
+ * @return variable de asignacion pra el metodo
  */
 	public Productos Buscarpro(String nombre) {
 		System.out.println(nombre+"Variabl enombre de produto");
@@ -100,15 +100,15 @@ public class ProductoBean {
 	}*/
 /**
  * 
- * @param codigo
+ * @param codigo vaiable que contien la clable principal con la que se trabaja
  */
 	public void eliminar(int codigo) {
 		tresk.eliminar(codigo);
 	}
 /**
  * 
- * @param produ
- * @return
+ * @param produ objeto con le que se trabaja para para actualicacion de datos
+ * @return variable de asigacion para el metodo
  */
 	public String update(Productos produ) {
 		tresk.actualizar(produ);
@@ -116,7 +116,7 @@ public class ProductoBean {
 	}
 /**
  * 
- * @return
+ * @return lista de productos vendidos
  */
 	public List<Estadisticas> resporteDeProductos() {
 		List<Productos> productosLisT = tresk.listarp();
@@ -160,7 +160,7 @@ public class ProductoBean {
 
 	/**
 	 * 
-	 * @return
+	 * @return obtine el producto ams vendido
 	 */
 	public Productos productoasMasBotados() {
 		List<Productos> getListaproductos = tresk.getProductos();
@@ -185,7 +185,7 @@ public class ProductoBean {
 	}
 	/**
 	 * 
-	 * @return
+	 * @return obtine el usuario que mas compras realizo
 	 */
 	public Usuario usuarioMasComprado() {		
 		List<Usuario> getListaUsuarios = tresk.getUsuarioList();
@@ -209,7 +209,7 @@ public class ProductoBean {
 	
 /**
  * 
- * @return
+ * @return limpia los campos y retorna una nueva paguina
  */
 	public String limpiar() {
 		this.prod.setId(0);
@@ -224,14 +224,14 @@ public class ProductoBean {
 	}
 /**
  * 
- * @return
+ * @return ontine la variable nombre
  */
 	public String getNombre() {
 		return nombre;
 	}
 /**
  * 
- * @param nombre
+ * @param nombre toma el parametro de nombre y lo asigna a la basa
  */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;

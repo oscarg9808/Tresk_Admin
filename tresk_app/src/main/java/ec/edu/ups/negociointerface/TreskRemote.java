@@ -33,9 +33,7 @@ public interface TreskRemote {
 	public boolean registarTarjetaUsuario(String cedula, Tarjeta tarjeta);
 	public boolean registrarDireccionUsuario(String cedula, Direccion direccion);
 
-	/**
-	 * llamado a metodos para la Factura
-	 */
+	
 	public void insertFacturaCabecera(Factura_Cabecera factura_Cabecera);
 	public List<Factura_Cabecera> getfactura_Cabeceras();
 	public List<Factura_Detalle> getfactura_Detalle();
@@ -59,7 +57,7 @@ public interface TreskRemote {
 	
 	/**
 	 * 
-	 * @return
+	 * @return Lista
 	 */
 	public List<Productos> getProductos();
 	public Productos getProducto(int id);

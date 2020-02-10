@@ -48,7 +48,7 @@ public class CategoriaBean {
 
 	/**
 	 * 
-	 * @return
+	 * @return retorna la categoria que se ha insertado
 	 */
 	public List<Categorias> listarCategorias() {
 		limpiar();
@@ -57,7 +57,7 @@ public class CategoriaBean {
 
 	/**
 	 * 
-	 * @return
+	 * @return retorna un avariable de asignacion bean
 	 */
 	public String addProductos() {
 		System.out.println("add prod");
@@ -67,7 +67,7 @@ public class CategoriaBean {
 
 	/**
 	 * 
-	 * @return
+	 * @return una variable de asignacion de bean
 	 */
 	public String guardar() {
 		System.out.println(cate);
@@ -81,11 +81,7 @@ public class CategoriaBean {
 	 * 
 	 * return null; }
 	 */
-	/**
-	 * 
-	 * @param nombre
-	 * @return
-	 */
+	
 	public Categorias Buscarcate(String nombre) {
 		System.out.println(nombre + "Variabl enombre de produto");
 		cate = tresk.buscate(nombre);
@@ -93,44 +89,27 @@ public class CategoriaBean {
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param codigo
-	 */
 	public void eliminar(int codigo) {
 		tresk.delete(codigo);
 	}
 
-	/**
-	 * 
-	 * @param categ
-	 * @return
-	 */
+	
 	public String update(Categorias categ) {
 		tresk.actualizarcate(categ);
 		return null;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
+	
 	public String getNombre() {
 		return nombre;
 	}
 
-	/**
-	 * 
-	 * @param nombre
-	 */
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
+
 	public String limpiar() {
 		this.cate.setId(0);
 		this.cate.setNombre("");
