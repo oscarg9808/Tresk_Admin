@@ -290,6 +290,7 @@
 	<!-- end  Registro Usuario -->
 			
 			
+			
 	<!-- Editar Usuario -->
 			<div class="modal fade" id="editarmodal" tabindex="-1" role="dialog" aria-labelledby="editarmodal" aria-hidden="true">
 				<div class="modal-dialog modal-lg" role="document">
@@ -304,7 +305,7 @@
 							<div class="form-group">
 								<div class="input-group">
 				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Usuarios" value="#{usuarioBean.cedula}" id="usuc" />
-				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{usuarioBean.Buscar()}" value="Buscar">
+				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{usuarioBean.Buscar(usuarioBean.cedula)}" value="Buscar">
 				        				<f:ajax execute="usuc" render=" cedula nombre apellido telefono fnac correo contra rol"/>
 				        			</h:commandButton>
 				        		</div>
@@ -313,6 +314,8 @@
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Cedula</div>
                                     	   	<h:inputText value="#{usuarioBean.usu.cedula}" id="cedula" class="form-control-success form-control"/>
+                                    	   	
+											<script>console.log(#{usuarioBean.usu.cedula})</script>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-id-card"></i>
                                            	</div>
@@ -395,8 +398,8 @@
                                 	</div>
                                 	
                                 	<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-										<h:commandButton action="#{usuarioBean.update()}" value="Actualizar" class="btn btn-primary"/>
+										<button type="button" value="#{usuarioBean.limpiar()}" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+										<h:commandButton action="#{usuarioBean.update(usuarioBean.usu)}" value="Actualizar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 						</div>

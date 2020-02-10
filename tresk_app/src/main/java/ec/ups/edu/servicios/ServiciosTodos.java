@@ -12,27 +12,41 @@ import javax.ws.rs.QueryParam;
 
 import ec.edu.ups.modelo.Carrito;
 import ec.edu.ups.modelo.Categorias;
+import ec.edu.ups.modelo.Direccion;
 import ec.edu.ups.modelo.Factura_Cabecera;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
+import ec.edu.ups.modelo.Tarjeta;
 import ec.edu.ups.modelo.Usuario;
+import ec.edu.ups.modelo.Voto;
 import ec.edu.ups.negociointerface.Tresklocal;
+
 
 
 @Path("/Tresk")
 public class ServiciosTodos {
 
+	
+	/**
+	 * Variable usada para llamar a los metodos declarados en la Interfaza Local TreskLocal
+	 */
 	@Inject
 	private Tresklocal tresk;
 	
-	
+	/**
+	 * Servicio REST tipo GET que obtiene los datos de las Categorias
+	 * @return tresk.getCategoriasL() contine una lista de categorias
+	 */
 	@GET
 	@Path("/categorias")
 	@Produces("application/json")
 	public List<Categorias> getCategorias(){
 		return tresk.getCategoriasL(); 
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	@GET
 	@Path("/productosLis")
 	@Produces("application/json")
@@ -80,7 +94,7 @@ public class ServiciosTodos {
 	@Produces("application/json")
 	public boolean insertFactura(Factura_Cabecera factura_Cabecera) {
 
-			tresk.insertFacturaCabecera(factura_Cabecera);
+		tresk.insertFacturaCabecera(factura_Cabecera);
 		
 		return true;
 	}
@@ -98,6 +112,29 @@ public class ServiciosTodos {
 	}
 	
 	
+	
+	@POST
+	@Path("/insertarTarjetaUsuario")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public boolean insertarTarjetaUsuario(@QueryParam("cedula") String cedula ,Tarjeta tarjeta) {
+
+		tresk.registarTarjetaUsuario(cedula, tarjeta);
+		
+		return true;
+	}
+	
+	@POST
+	@Path("/insertarDireccionUsuario")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public boolean insertarDireccionUsuario(@QueryParam("cedula") String cedula ,Direccion direccion) {
+
+		tresk.registrarDireccionUsuario(cedula, direccion);
+		
+		return true;
+	}
+	
 	@POST
 	@Path("/insertarfacturaDetalle")
 	@Consumes("application/json")
@@ -110,7 +147,7 @@ public class ServiciosTodos {
 	}
 	
 	
-	@GET
+	@POST
 	@Path("/realizarPago")
 	@Consumes("application/json")
 	@Produces("application/json")
@@ -164,11 +201,11 @@ public class ServiciosTodos {
 		return tresk.numeroFacruradetId();
 	}
 	
-	@GET
+	@POST
 	@Path("/elimimarDetalleBase")
 	@Produces("application/json")
-	public boolean elimarDetalle(@QueryParam("facdetalle") int facdetalle){
-		tresk.borrarFacturaDetalle(facdetalle);
+	public boolean elimarDetalle(@QueryParam("facdetalle") int facdetalle,@QueryParam("idFactura") int idFactura){
+		tresk.borrarFacturaDetalle(facdetalle, idFactura);
 		return true;
 	}
 	
@@ -180,6 +217,23 @@ public class ServiciosTodos {
 	public int  getUsuarFactura(@QueryParam("cedula") String contrasena){
 		return tresk.getidFacturaCabecera(contrasena);
 	}
+	
+	@GET
+	@Path("/getProductoVotado")
+	@Produces("application/json")
+	public boolean getProductoVotado(@QueryParam("cedula") String cedula,@QueryParam("idP") int idP){
+		return tresk.getProductoVotado(cedula, idP);
+	}
+	
+	
+	@POST
+	@Path("/insertarVoto")
+	@Produces("application/json")
+	public boolean insertarVoto(@QueryParam("cedula") String cedula,@QueryParam("idP") int idP,Voto voto){
+		return tresk.insertarVoto(cedula, idP, voto);
+	}
+	
+
 		
 		
 }

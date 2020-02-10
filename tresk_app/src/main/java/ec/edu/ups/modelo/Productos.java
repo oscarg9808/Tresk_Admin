@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.soap.Text;
 
 /*
  * @(#)Producto.java 08/01/20
@@ -22,8 +23,8 @@ import javax.persistence.Table;
  */
 
 /**
- * Esta clase hace referencia a la entidad Producto
- * para usarlo en la tienda virtual.
+ * Esta clase hace referencia a la entidad Producto para usarlo en la tienda
+ * virtual.
  *
  * @author Oscar Pizarro
  * @author Jose Atariguano
@@ -36,106 +37,185 @@ import javax.persistence.Table;
 public class Productos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-		@Id 
-		@GeneratedValue(strategy = GenerationType.AUTO)
-		private int id;
-		private String nombre;
-		private String descripcion;
-		private double precio_uni;
-		private String urlImagen;
-		private int categoria;
-		private int stock;
-		
-		/*@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-		@JoinColumn(name="productoDetalle", referencedColumnName = "id")
-		private List<Factura_Detalle> listaFacturadetalle;*/
-		
-		@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-		@JoinColumn(name="productoCarrito", referencedColumnName = "id")
-		private List<Carrito> listaCarrito ;
-		
-		@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-		@JoinColumn(name="votoproducto", referencedColumnName = "id")
-		private List<Voto> voto;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String nombre;
+	@Column(columnDefinition = "text")
+	private String descripcion;
+	private double precio_uni;
+	private String urlImagen;
+	private int categoria;
+	private int stock;
 
-		public int getId() {
-			return id;
-		}
+	/**
+	 * Relacion JPA que relaciona al producto con el modelo carrito
+	 */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "productoCarrito", referencedColumnName = "id")
+	private List<Carrito> listaCarrito;
 
-		public void setId(int id) {
-			this.id = id;
-		}
+	/**
+	 * Relacion JPA que relaciona al producto con el modelo carrito
+	 */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@JoinColumn(name = "votoproducto", referencedColumnName = "id")
+	private List<Voto> voto;
 
-		public String getNombre() {
-			return nombre;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable id del modelo Productos
+	 */
+	public int getId() {
+		return id;
+	}
 
-		public void setNombre(String nombre) {
-			this.nombre = nombre;
-		}
+	/**
+	 * 
+	 * @param id toma el parametro id para ser asignado a la variable id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
-		public String getDescripcion() {
-			return descripcion;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable nombre del modelo Productos
+	 */
+	public String getNombre() {
+		return nombre;
+	}
 
-		public void setDescripcion(String descripcion) {
-			this.descripcion = descripcion;
-		}
+	/**
+	 * 
+	 * @param nombre toma el parametro nombre para ser asignado a la variable nombre
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-		public double getPrecio_uni() {
-			return precio_uni;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable descripcion del modelo Productos
+	 */
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-		public void setPrecio_uni(double precio_uni) {
-			this.precio_uni = precio_uni;
-		}
+	/**
+	 * 
+	 * @param descripcion toma el parametro descripcion para ser asignado a la variable descripcion
+	 */
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
-		public String getUrlImagen() {
-			return urlImagen;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable precio_uni del modelo Productos
+	 */
+	public double getPrecio_uni() {
+		return precio_uni;
+	}
 
-		public void setUrlImagen(String urlImagen) {
-			this.urlImagen = urlImagen;
-		}
+	/**
+	 * 
+	 * @param precio_uni toma el parametro precio_uni para ser asignado a la variable precio_uni
+	 */
+	public void setPrecio_uni(double precio_uni) {
+		this.precio_uni = precio_uni;
+	}
 
-		public List<Carrito> getListaCarrito() {
-			return listaCarrito;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable urlImagen del modelo Productos
+	 */
+	public String getUrlImagen() {
+		return urlImagen;
+	}
 
-		public void setListaCarrito(List<Carrito> listaCarrito) {
-			this.listaCarrito = listaCarrito;
-		}
+	/**
+	 * 
+	 * @param urlImagen toma el parametro urlImagen para ser asignado a la variable urlImagen
+	 */
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
+	}
 
-		public List<Voto> getVoto() {
-			return voto;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable id del modelo Productos
+	 */
+	public List<Carrito> getListaCarrito() {
+		return listaCarrito;
+	}
 
-		public void setVoto(List<Voto> voto) {
-			this.voto = voto;
-		}
+	/**
+	 * 
+	 * @param listaCarrito
+	 */
+	public void setListaCarrito(List<Carrito> listaCarrito) {
+		this.listaCarrito = listaCarrito;
+	}
 
-		public int getCategoria() {
-			return categoria;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable id del modelo Productos
+	 */
+	public List<Voto> getVoto() {
+		return voto;
+	}
 
-		public void setCategoria(int categorias) {
-			this.categoria = categorias;
-		}
+	/**
+	 * 
+	 * @param voto toma el parametro voto para ser asignado a la variable voto
+	 */
+	public void setVoto(List<Voto> voto) {
+		this.voto = voto;
+	}
 
+	/**
+	 * 
+	 * @return obtiene la variable id del modelo Productos
+	 */
+	public int getCategoria() {
+		return categoria;
+	}
 
-		public int getStock() {
-			return stock;
-		}
+	/**
+	 * 
+	 * @param categorias toma el parametro categoria para ser asignado a la variable categoria
+	 */
+	public void setCategoria(int categorias) {
+		this.categoria = categorias;
+	}
 
-		public void setStock(int stock) {
-			this.stock = stock;
-		}
+	/**
+	 * 
+	 * @return obtiene la variable stock del modelo Productos
+	 */
+	public int getStock() {
+		return stock;
+	}
 
-		@Override
-		public String toString() {
-			return "Productos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio_uni="
-					+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + ", stock=" + stock + "]";
-		}
-		
-		
+	/**
+	 * 
+	 * @param stock toma el parametro stock para ser asignado a la variable stock
+	 */
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	@Override
+	public String toString() {
+		return "Productos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio_uni="
+				+ precio_uni + ", urlImagen=" + urlImagen + ", categoria=" + categoria + ", stock=" + stock
+				+ ", listaCarrito=" + listaCarrito + ", voto=" + voto + "]";
+	}
+
+	/**
+	 * Metodo sobre escrito que parsea datos para su interpretacion
+	 */
+	
+
 }

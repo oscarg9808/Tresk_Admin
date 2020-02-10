@@ -252,8 +252,6 @@
                                            	</div>
                                      	</div>
                                 	</div>
-                                	
-
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 										<h:commandButton  action="#{productoBean.guardar()}" value="Guardar" class="btn btn-primary"/>
@@ -281,11 +279,9 @@
 							<div class="form-group">
 								<div class="input-group">
 				          			<h:inputText class="form-control-success form-control" type="text" der="Buscar Usuarios" value="#{productoBean.nombre}" id="prod" />
-				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{productoBean.Buscarnom()}" value="Buscar" id="bus">
+				        			<h:commandButton class="btn btn-outline-success btn-sm" action="#{productoBean.Buscarpro(productoBean.nombre)}" value="Buscar" id="bus">
 				        				 <f:ajax execute="prod" render="nombre descripcion categoria imagen precio stock" />
 				        			</h:commandButton>
-				        			
-				        			
 				        		</div>
 				        	</div>                               	
                                 	<div class="form-group">
@@ -340,7 +336,7 @@
                   			<div class="form-group">
                                     	<div class="input-group">
                                         	<div class="input-group-addon">Stock</div>
-                                    	    <h:inputText value="#{productoBean.prod.categoria}" id="stock" class="form-control-success form-control"/>
+                                    	    <h:inputText value="#{productoBean.prod.stock}" id="stock" class="form-control-success form-control"/>
                                             <div class="input-group-addon">
                                             	<i class="fa fa-phone"></i>
                                            	</div>
@@ -348,7 +344,7 @@
                                 	</div>
                                 	<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-										<h:commandButton action="#{productoBean.update()}" value="Actualizar" class="btn btn-primary"/>
+										<h:commandButton action="#{productoBean.update(productoBean.prod)}" value="Actualizar" class="btn btn-primary"/>
 									</div>
                                 </h:form>
 						</div>

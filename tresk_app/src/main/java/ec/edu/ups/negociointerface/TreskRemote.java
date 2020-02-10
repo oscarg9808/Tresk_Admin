@@ -6,23 +6,32 @@ import javax.ejb.Remote;
 
 import ec.edu.ups.modelo.Carrito;
 import ec.edu.ups.modelo.Categorias;
+import ec.edu.ups.modelo.Direccion;
 import ec.edu.ups.modelo.Estadisticas;
 import ec.edu.ups.modelo.Factura_Cabecera;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
+import ec.edu.ups.modelo.Tarjeta;
 import ec.edu.ups.modelo.Usuario;
+import ec.edu.ups.modelo.Voto;
 
 @Remote
 public interface TreskRemote {
 	
-
 	/**
-	 * llamado a metodos para el usuario
+	 * 
+	 * @param usuario metodo qye lleva de parametro la variable de un usuario 
 	 */
 	public void CrearUsuario(Usuario usuario);
+	public String BuscarUsuario(String cedula);
 	public List<Usuario> getUsuarioList();
 	public List<Usuario> totalusuarios();
 	public Usuario getUsuarioLogin(String contrasena, String correo);
+	public Usuario getAdminlogin(String usuariolog, String contra);
+	public String eliminar(String cedula);
+	public String update();
+	public boolean registarTarjetaUsuario(String cedula, Tarjeta tarjeta);
+	public boolean registrarDireccionUsuario(String cedula, Direccion direccion);
 
 	/**
 	 * llamado a metodos para la Factura
@@ -37,18 +46,31 @@ public interface TreskRemote {
 	public int numeroFacruraId();
 	public int getidFacturaCabecera(String cedula);
 	public int numeroFacruradetId();
-	public boolean borrarFacturaDetalle(int facdetalle);
 	public List<Estadisticas> resporteDeProductos();
+	public boolean borrarFacturaDetalle(int facdetalle, int idFactura);
 	
 	/**
-	 * llamado a metodos para categorias
+	 * 
+	 * @return retorna una lisat de catagotria que son llamadas en la interfaz
 	 */
 	public List<Categorias> getCategoriasL();
+	public void guardarcat(Categorias cate);
+	public void delete(int cate);
 	
 	/**
-	 * llamado a metodos para el producto
+	 * 
+	 * @return
 	 */
 	public List<Productos> getProductos();
 	public Productos getProducto(int id);
+	public void nuevoprod(Productos prod);
+	public void eliminar(int prod);
+	public void actualizar(Productos prod);
+	public List<Productos> listarp();
+	public List<Factura_Detalle> factlist();
+	public void busprod(String prod);
+	public boolean getProductoVotado (String cedula, int idP) ;
 	
+	public boolean insertarVoto(String cedula, int idP, Voto voto);
+
 }

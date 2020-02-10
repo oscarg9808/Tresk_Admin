@@ -6,29 +6,38 @@ import javax.ejb.Local;
 
 import ec.edu.ups.modelo.Carrito;
 import ec.edu.ups.modelo.Categorias;
+import ec.edu.ups.modelo.Direccion;
 import ec.edu.ups.modelo.Estadisticas;
 import ec.edu.ups.modelo.Factura_Cabecera;
 import ec.edu.ups.modelo.Factura_Detalle;
 import ec.edu.ups.modelo.Productos;
+import ec.edu.ups.modelo.Tarjeta;
 import ec.edu.ups.modelo.Usuario;
+import ec.edu.ups.modelo.Voto;
 
 @Local
 public interface Tresklocal {
 	
 
 	/**
-	 * llamado a metodos para el usuario
+	 * 
+	 * @param usuario Metodo para la creacion de un usuario
 	 */
 	public void CrearUsuario(Usuario usuario);
-	public void BuscarUsuario(String cedula);
+	public String BuscarUsuario(String cedula);
 	public List<Usuario> getUsuarioList();
 	public List<Usuario> totalusuarios();
 	public Usuario getUsuarioLogin(String contrasena, String correo);
+//	public Usuario getAdminlogin(String usuariolog, String contra);
 	public String eliminar(String cedula);
-	public String update();
+	public String update(Usuario usua);
+	public boolean registarTarjetaUsuario(String cedula, Tarjeta tarjeta);
+	public boolean registrarDireccionUsuario(String cedula, Direccion direccion);
+	
 
 	/**
-	 * llamado a metodos para la Factura
+	 * 
+	 * @param factura_Cabecera metedo de insertar la factura
 	 */
 	public void insertFacturaCabecera(Factura_Cabecera factura_Cabecera);
 	public List<Factura_Cabecera> getfactura_Cabeceras();
@@ -40,18 +49,20 @@ public interface Tresklocal {
 	public int numeroFacruraId();
 	public int getidFacturaCabecera(String cedula);
 	public int numeroFacruradetId();
-	public boolean borrarFacturaDetalle(int facdetalle);
 	public List<Estadisticas> resporteDeProductos();
+	public boolean borrarFacturaDetalle(int facdetalle, int idFactura);
 	
 	/**
-	 * llamado a metodos para categorias
+	 * 
+	 * @return retorna una lista de categorias en que se encunetren registradas
 	 */
 	public List<Categorias> getCategoriasL();
 	public void guardarcat(Categorias cate);
 	public void delete(int cate);
 	
 	/**
-	 * llamado a metodos para el producto
+	 * 
+	 * @return retorna una lista de productos 
 	 */
 	public List<Productos> getProductos();
 	public Productos getProducto(int id);
@@ -60,5 +71,16 @@ public interface Tresklocal {
 	public void actualizar(Productos prod);
 	public List<Productos> listarp();
 	public List<Factura_Detalle> factlist();
+	public Productos busprod(String prod);
+	
+	
+	public boolean getProductoVotado (String cedula, int idP);
+	
+	public boolean insertarVoto(String cedula, int idP, Voto voto);
+	public Categorias buscate(String nombre);
+	public void actualizarcate(Categorias categ);
+	
+	
+
 	
 }

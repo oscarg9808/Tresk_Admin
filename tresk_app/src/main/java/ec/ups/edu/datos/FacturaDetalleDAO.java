@@ -22,6 +22,8 @@ public class FacturaDetalleDAO {
 		return entityManager.createQuery("Select u from facturadetalle u", Factura_Detalle.class).getResultList();
 	}
 	
-	
+	public Factura_Detalle factura_Detalle (int id) {
+		return entityManager.find(Factura_Detalle.class, id);
+	}
 
 }

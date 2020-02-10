@@ -16,27 +16,41 @@ public class FacturaDAO {
 	@Inject
 	private EntityManager em;
 	
-	/*
+	/**
 	 * 
+	 * @param factura_Cabecera modelo de factura cabecera a ser insertado en la base
 	 */
 	public void insertarFactura(Factura_Cabecera factura_Cabecera) {
 		em.persist(factura_Cabecera);
 	}
-	
+	/**
+	 * 
+	 * @param id_factura variable que contiene la clave de factura cabecera
+	 * @return una Factura cabecera que es busaca en base a si ID
+	 */
 	public Factura_Cabecera leerFactuarCabecera(int id_factura) {
 		return em.find(Factura_Cabecera.class, id_factura);
 	}
 	
-	
+	/**
+	 * 
+	 * @return una lista de facturas cabeceras que se necuntrren registradas en la base
+	 */
 	public List<Factura_Cabecera> getListFacturaCabecer(){
 		return em.createQuery("Select u from facturacabecera u", Factura_Cabecera.class).getResultList();
 	}
-	
+	/**
+	 * 
+	 * @return retorna una lista de facturas detalles que se encuentren registradas en la base
+	 */
 	public List<Factura_Detalle> getListFacturaDetalle(){
 		return em.createQuery("Select u from facturadetalle u", Factura_Detalle.class).getResultList();
 	}
 	
-	
+	/**
+	 *  
+	 * @param factura_Cabecera contiene el objeto de la factura cabecera a ser actualizaste
+	 */
 	public void actualizarFacturaCabecera(Factura_Cabecera factura_Cabecera) {
 		em.merge(factura_Cabecera);
 	}
@@ -70,8 +84,7 @@ public class FacturaDAO {
 	}
 	   
    }
-   
-   
+  
    public int idFacturaDetalle() {
 	   try {
 		   
@@ -109,7 +122,7 @@ public class FacturaDAO {
    public void borrarFacturaDetalle(Factura_Detalle factura_Detalle) {
 	   em.remove(factura_Detalle);
    }
-   
+ 
    public boolean borrarFacturaDetalleBase(int id) {
 	   em.createQuery("DELETE FROM facturadetalle c WHERE c.id="+id);
 	   System.out.println(em.createQuery("DELETE FROM facturadetalle c WHERE c.id="+id).executeUpdate());

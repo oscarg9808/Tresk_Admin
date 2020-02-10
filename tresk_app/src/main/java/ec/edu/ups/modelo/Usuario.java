@@ -27,8 +27,8 @@ import javax.xml.crypto.Data;
  */
 
 /**
- * Esta clase hace referencia a la entidad Usuario
- * para uso de la tienda virtual.
+ * Esta clase hace referencia a la entidad Usuario para uso de la tienda
+ * virtual.
  *
  * @author Oscar Pizarro
  * @author Jose Atariguano
@@ -36,54 +36,71 @@ import javax.xml.crypto.Data;
  * @since 1.4 REVISARRR.......................
  */
 
-
 @Entity(name = "usuario")
 @Table(name = "usuario")
-public class Usuario implements Serializable{
-	
+public class Usuario implements Serializable {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Atributos que usados para el manejo de un modelo Persona
+	 */
 	@Id
-	@Column (length = 10)
+	@Column(length = 10)
 	private String cedula;
-	@Column (length = 25)
+	@Column(length = 25)
 	private String nombre;
-	@Column ( length = 25)
+	@Column(length = 25)
 	private String apellido;
-	@Column (length = 10)
+	@Column(length = 10)
 	private String telefono;
 	@Temporal(TemporalType.DATE)
 	private Date fnacimi;
-	@Column (length = 45)
+	@Column(length = 45)
 	private String correo;
-	@Column (length = 45)
+	@Column(length = 45)
 	private String usuariolog;
-	@Column (length = 45)
+	@Column(length = 45)
 	private String contrasena;
 	private String admin;
-	
-	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="usuarioTarjeta", referencedColumnName = "cedula")
+
+	/**
+	 *JPA que indica que existe una relacion en el modelo Usuario 
+	 *con el modelo Trajeta
+	 */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@JoinColumn(name = "usuarioTarjeta", referencedColumnName = "cedula")
 	private List<Tarjeta> tarjeta;
-	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="usuariodir", referencedColumnName = "cedula")
+/**
+ * JPA que indica que existe una relacion de uno a muchos entre el modelo
+ * Usuarios y el modelo direcion
+ */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuariodir", referencedColumnName = "cedula")
 	private List<Direccion> direccion;
-	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="usuarioFactura", referencedColumnName = "cedula")
+/**
+ * JPA que indica que existe una relacion de uno a muchos entre el modelo
+ * Uusuario y el modelo Factura_cabecera
+ */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuarioFactura", referencedColumnName = "cedula")
 	private List<Factura_Cabecera> factura_Cabeceras;
-	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="usuarioCarrito", referencedColumnName = "cedula")
+/**
+ * JPA que indica que existe una relacion de uno a muchos entre la 
+ * entiad usuarios y la entidad listCarrito
+ */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuarioCarrito", referencedColumnName = "cedula")
 	private List<Carrito> listCarrito;
-	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="usuariovoto", referencedColumnName = "cedula")
-	private List<Voto> voto;	
+	/**
+	 * JPA que indica que existe una relacion de uno a muchos entre la 
+	 * entiad usuarios y la entidad voto
+	 */
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuariovoto", referencedColumnName = "cedula")
+	private List<Voto> voto;
 
 	public String getCedula() {
 		return cedula;
@@ -149,11 +166,11 @@ public class Usuario implements Serializable{
 		this.admin = admin;
 	}
 
-	public List<Tarjeta> getTrajeta() {
+	public List<Tarjeta> getTarjeta() {
 		return tarjeta;
 	}
 
-	public void setTrajeta(List<Tarjeta> trajeta) {
+	public void setTarjeta(List<Tarjeta> trajeta) {
 		this.tarjeta = trajeta;
 	}
 
@@ -189,12 +206,23 @@ public class Usuario implements Serializable{
 		this.usuariolog = usuariolog;
 	}
 
+	public List<Voto> getVoto() {
+		return voto;
+	}
+
+	public void setVoto(List<Voto> voto) {
+		this.voto = voto;
+	}
+
+	/**
+	 * Metodo sobre escrito que parsea datos para su interpretacion
+	 */
 	@Override
 	public String toString() {
 		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
 				+ ", fnacimi=" + fnacimi + ", correo=" + correo + ", usuariolog=" + usuariolog + ", contrasena="
-				+ contrasena + ", admin=" + admin + ", tarjeta=" + tarjeta + ", direccion=" + direccion + "]";
+				+ contrasena + ", admin=" + admin + ", tarjeta=" + tarjeta + ", direccion=" + direccion
+				+ ", factura_Cabeceras=" + factura_Cabeceras + ", listCarrito=" + listCarrito + ", voto=" + voto + "]";
 	}
-
 
 }

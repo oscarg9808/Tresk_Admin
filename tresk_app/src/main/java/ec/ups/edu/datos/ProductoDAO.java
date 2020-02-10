@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject; 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import ec.edu.ups.modelo.Categorias;
@@ -39,9 +40,11 @@ public class ProductoDAO {
 
 	
 	public Productos leernom(String nombre) {
-		TypedQuery<Productos> produ =  em.createQuery("SELECT c FROM productos c WHERE c.nombre = :nombre", Productos.class);
-		System.out.println(produ.setParameter("nombre", nombre).getSingleResult());
-		return produ.setParameter("nombre", nombre).getSingleResult();
+		System.out.println("Variabel dao nombre "+nombre);
+		Query produ =  em.createQuery("SELECT c FROM productos c WHERE c.nombre ='" +nombre+"'");
+		Productos prod = (Productos) produ.getSingleResult();
+		
+		return prod;
 		}
 	
 	public List<Productos> listar() { 

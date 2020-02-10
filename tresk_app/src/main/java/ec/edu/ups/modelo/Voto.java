@@ -44,19 +44,25 @@ public class Voto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(length = 100)
-	private int numvoto;
+	private boolean numvoto;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getNumvoto() {
+	public boolean getNumvoto() {
 		return numvoto;
 	}
-	public void setNumvoto(int numvoto) {
+	public void setNumvoto(boolean numvoto) {
 		this.numvoto = numvoto;
 	}
+	@Override
+	public String toString() {
+		return "Voto [id=" + id + ", numvoto=" + numvoto + "]";
+	}
+	
+	
 	
 	
 }
